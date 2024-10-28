@@ -7,7 +7,7 @@
         
       
         <div class=" absolute  text-white   top-1/3   xl:1/3 ml-16 space-y-2  " >
-           <p class="font-helvetica regural white-text text-xl ml-2">WELCOME TO SCALEFIX,</p>
+           <p class="font-helvetica regural white-text text-md ml-2">WELCOME TO SCALEFIX,</p>
            <div class="flex space-x-2">
             <p class="text-white font-ataero Regular text-8xl ">Creative </p>
             <p class="text-violet font-ataero Regular text-8xl">Strategies,</p>
