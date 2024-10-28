@@ -1,20 +1,33 @@
 <template>
 <div class="">
-    <!-- <NavbarComp/> -->
     <div class="relative h-screen min-h-[400px] max-h-[670px] sm:max-h-[800px] lg:max-h-[900px] xl:max-h-[1000px]">
-        <div class="absolute inset-0 bg-black opacity-30"></div>
+        <NavbarComp/>
+
         <img src="../assets/background.jpg" alt="Background" class="h-full w-full object-cover">
         
       
-        <div class="font-rockinsoda absolute  text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl top-2/4 left-4 sm:left-8 md:left-12 lg:left-16 xl:left-20 xl:2/4 text-center sm:text-left" ref="text">
-         
+        <div class=" absolute  text-white   top-1/3   xl:1/3 ml-16 space-y-2  " >
+           <p class="font-helvetica regural white-text text-xl ml-2">WELCOME TO SCALEFIX,</p>
+           <div class="flex space-x-2">
+            <p class="text-white font-ataero Regular text-8xl ">Creative </p>
+            <p class="text-violet font-ataero Regular text-8xl">Strategies,</p>
+           </div>
+           <div class=" flex w-full space-x-10">
+            <div class="w-1/2">
+            <p class="font-helvetica mt-2 text-md">Empower your brand with custom digital marketing solutions that increase visibility,
+                 build strong connections with customers, and help your business grow. We use creativity and smart strategies to 
+                 make sure your brand succeeds online.</p>
+          </div>
+
+            <div class="space-x-2 flex mt-12 ">
+                <p class="text-white font-ataero Regular text-8xl ">Real</p>
+                <p class="text-violet font-ataero Regular text-8xl ">Impact</p>
+            </div>
+           </div>
+           
         </div>
 
-        <div class="absolute top-3/4 left-4 sm:left-8 md:left-12 lg:left-16 xl:left-20 xl:2/4 sm:text-left">
-         
-        
-
-        </div>
+       
 
   
   
@@ -23,14 +36,33 @@
 </template>
 
 <script>
-// import NavbarComp from '@/components/NavbarComp.vue';
+import NavbarComp from '@/components/NavbarComp.vue';
 export default{
     name:'HomePage',
     components:{
-        // NavbarComp
+        NavbarComp
     }
 }
 </script>
 
 <style>
+.underline-animation {
+    position: relative;
+  }
+  
+  .underline-animation::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .underline-animation:hover::after {
+    width: 100%;
+  }
+
 </style>
