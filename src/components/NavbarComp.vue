@@ -1,6 +1,6 @@
 <template>
     <div>
-            <div class=" p-8 flex absolute  fixed top-0 left-0 justify-between w-full bg-white/2 backdrop-blur-md border-b border-white/20  shadow-sm text-white p-4  ">
+            <div class=" p-8 flex fixed top-0 left-0 justify-between w-full bg-white/2 backdrop-blur-md border-b border-white/20  shadow-sm text-white p-4  ">
             <div class="ml-12 mt-2 ">
                 <img src="../assets/scalefixLogo.svg" class="h-[5vh]">
             </div>
@@ -23,8 +23,8 @@
 <script>
 
 export default{
-
     name:"NavbarComp"
+
 }
 </script>
 

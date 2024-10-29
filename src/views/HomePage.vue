@@ -32,6 +32,14 @@
   
   
       </div>
+
+
+      <!--second sectionnnnnnnnnnnnnnnnnn-->
+      <div class="bg-frame h-screen">
+         <!-- ABOUT US SECTION -->
+
+
+      </div>
 </div>
 </template>
 
