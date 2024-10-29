@@ -44,7 +44,7 @@
 
 
       <!--second sectionnnnnnnnnnnnnnnnnn-->
-      <div class="bg-frame h-auto  relative z-20">
+      <div class="bg-frame h-auto  relative z-20" id="about-section" >
          <!-- ABOUT US SECTION -->
 
          <div class="flex items-center justify-center w-full p-24 space-x-4">
