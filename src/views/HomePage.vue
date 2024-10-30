@@ -106,7 +106,20 @@
               </div>
               </div>
             </div>
-           
+             
+            <div class="w-full relative">
+              <div class="absolute inset-0 bg-black opacity-70"></div>
+              <img src="../assets/wokers.jpeg" class="h-[65vh] w-full object-cover">
+
+              <div class="absolute inset-0  space-y-2 flex flex-col items-center justify-center text-center text-white px-4">
+              
+                  <p class="text-4xl font-ataero"> <span class="text-violet">ScaleFix</span> is a one-click step to an</p>
+                  <p class="text-4xl font-ataero">excellent digital <span class="text-violet">marketing</span> </p>
+                  <p class="text-lg font-helvetica" >Let's Grow Together  Discover How We Can Help Your Business Thrive.</p>
+                  <button class="bg-violet text-white text-md rounded-sm font-helvetica h-[6vh] px-4 ">Book a consultation call </button>
+               
+              </div>
+            </div>
         
 
           </div>
