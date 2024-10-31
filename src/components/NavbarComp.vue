@@ -12,7 +12,9 @@
             </ul>
 
             <div class="mr-20 ">
+                <a  href="https://calendly.com/bayinganaalain"  target="_blank" >
                 <button class="bg-violet text-white text-md rounded-sm font-helvetica h-[6vh] px-4 ">Book a consultation call </button>
+            </a>
             </div>
         </div>
         

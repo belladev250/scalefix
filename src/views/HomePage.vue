@@ -62,8 +62,9 @@
               </p>
 
               <div class="">
-                <button class="bg-violet text-white text-md rounded-sm font-helvetica h-[6vh] px-4 ">Book a consultation call </button>
-            </div>
+                <a  href="https://calendly.com/bayinganaalain"  target="_blank" >
+                  <button class="bg-violet text-white text-md rounded-sm font-helvetica h-[6vh] px-4 ">Book a consultation call </button>
+              </a>            </div>
             </div>
             <div class="">
               <img src="../assets/hi5.jpg" class="h-[60vh] object-cover ">
@@ -87,7 +88,7 @@
         
             <div class="space-y-2">
           
-              <p class="text-center text-white font-helvetica text-xl ">Our values</p>
+              <p class="text-center text-white font-helvetica Regular text-xl ">Our values</p>
               <p class="text-center text-white font-ataero text-3xl" >Why are <span class="text-violet" >brands</span> choosing <span class="text-violet" >us?</span></p>
               <p class="text-center text-white font-helvetica text-lg">Guided by principles that drive success and build lasting relationships, we focus on innovation, honesty,</p>
             <p class="text-center text-white font-helvetica text-lg"> and delivering results that matter.</p>
@@ -111,15 +112,44 @@
               <div class="absolute inset-0 bg-black opacity-70"></div>
               <img src="../assets/wokers.jpeg" class="h-[65vh] w-full object-cover">
 
-              <div class="absolute inset-0  space-y-2 flex flex-col items-center justify-center text-center text-white px-4">
+              <div class="absolute inset-0  space-y-2 flex flex-col items-center justify-center text-center text-white px-4" >
               
                   <p class="text-4xl font-ataero"> <span class="text-violet">ScaleFix</span> is a one-click step to an</p>
                   <p class="text-4xl font-ataero">excellent digital <span class="text-violet">marketing</span> </p>
                   <p class="text-lg font-helvetica" >Let's Grow Together  Discover How We Can Help Your Business Thrive.</p>
-                  <button class="bg-violet text-white text-md rounded-sm font-helvetica h-[6vh] px-4 ">Book a consultation call </button>
-               
+                  <a  href="https://calendly.com/bayinganaalain"  target="_blank" >
+                    <button class="bg-violet text-white text-md rounded-sm font-helvetica h-[6vh] px-4 " id="services-section">Book a consultation call </button>
+                </a>               
               </div>
             </div>
+
+
+
+
+            <!-- Our service section -->
+             <div class="flex flex-col items-center justify-center  space-y-4 mt-20" >
+              <div class="w-4/5">
+              <p class="text-white self-start  text-lg font-helvetica Regural">Our services</p>
+            </div>
+              <div class="flex justify-between  w-4/5">
+                <p class="text-white font-ataero text-4xl" >What is in for  <span class="text-violet" >you?</span></p>
+                <div class="flex space-x-4 cursor-pointer">
+                  <img src="../assets/prev.svg" alt="" @click="prevSlide">
+                  <img src="../assets/next.svg" alt="" @click="nextSlide" >
+                </div>
+              </div>
+
+            
+                <div class="flex items-center justify-center w-4/5 space-x-8 " v-for="(slide,index) in currentSlideImages" :key="index">
+                <div v-for="card in slide" :key="card.img" class="space-y-4">
+                <img :src="card.img" class="h-[40vh] w-[40vw] object-cover">
+              
+                <p class="text-white font-ataero text-xl">{{card.title}}</p>
+                <p class="text-white font-helvetica Regular text-sm" >{{card.desc}}</p>
+                </div>
+              </div>
+              
+             </div>
         
 
           </div>
@@ -141,6 +171,45 @@
     },
     data() {
       return {
+
+        cards:[
+
+        {
+          img:require('../assets/graph.jpg'),
+          title:'Advanced Performance Marketing',
+          desc:'With our deep expertise in paid media, PPC, SEO, and multi-location marketing, we provide a competitive edge that sets us apart and help your brand stand out.'
+        },
+        {
+          img:require('../assets/ai.jpg'),
+          title:'Tailored AI-Powered Solutions',
+          desc:'We understand that one-size-fits-all approach does not  work. Our AI-powered approach creates personalized solutions that address your specific challenges and drive results.'
+        },
+        {
+          img:require('../assets/handshake.jpg'),
+          title:'Uncompromising Competitiveness',
+          desc:'We always put our clients needs first, carefully listening to their goals and challenges to create strategies that work for them. We build long-term partnerships'
+        },
+        {
+          img:require('../assets/graph.jpg'),
+          title:'Advanced Performance Marketing',
+          desc:'With our deep expertise in paid media, PPC, SEO, and multi-location marketing, we provide a competitive edge that sets us apart and help your brand stand out.'
+          
+        },
+        {
+         
+          img:require('../assets/ai.jpg'),
+          title:'Uncompromising Competitiveness',
+          desc:'We always put our clients needs first, carefully listening to their goals and challenges to create strategies that work for them. We build long-term partnerships'
+
+        },
+        {
+          img:require('../assets/graph.jpg'),
+          title:'Advanced Performance Marketing',
+          desc:'With our deep expertise in paid media, PPC, SEO, and multi-location marketing, we provide a competitive edge that sets us apart and help your brand stand out.'
+        }
+
+
+        ],
 
         values:[
           {
@@ -256,7 +325,8 @@
             }
           },
           detectRetina: true
-        }
+        },
+        currentSlide:0,
       }
     },
     methods: {
@@ -267,7 +337,37 @@
           console.error("", err);
         }
       },
+      nextSlide() {
+      if (this.currentSlide < this.groupedImages.length - 1) {
+        this.currentSlide++;
+      } else {
+        this.currentSlide = 0; 
+      }
+    },
+    prevSlide() {
+      if (this.currentSlide > 0) {
+        this.currentSlide--;
+      } else {
+        this.currentSlide = this.groupedImages.length - 1; 
+      }
+    }
+     
     
+    },
+
+    computed:{
+      groupedImages() {
+      return this.cards.reduce((acc, card, index) => {
+        const slideIndex = Math.floor(index / 3);
+        if (!acc[slideIndex]) acc[slideIndex] = [];
+        acc[slideIndex].push(card);
+        return acc;
+      }, []);
+    },
+    currentSlideImages() {
+      return this.groupedImages.slice(this.currentSlide, this.currentSlide + 1);
+    }
+
     }
   }
   </script>
@@ -300,4 +400,15 @@
   .underline-animation:hover::after {
     width: 100%;
   }
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 0.5s ease;
+}
+.slide-enter {
+  transform: translateX(100%);
+}
+.slide-leave-to {
+  transform: translateX(-100%);
+}
   </style>
