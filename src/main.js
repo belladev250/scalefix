@@ -3,6 +3,8 @@ import App from './App.vue';
 import './assets/tailwind.css';
 import 'tailwindcss/tailwind.css';
 import Particles from "vue3-particles"
+import "vue3-carousel/dist/carousel.css";
+
 
 const app = createApp(App)
 app.use(Particles)

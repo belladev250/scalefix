@@ -133,24 +133,86 @@
             </div>
               <div class="flex justify-between  w-4/5">
                 <p class="text-white font-ataero text-4xl" >What is in for  <span class="text-violet" >you?</span></p>
-                <div class="flex space-x-4 cursor-pointer">
-                  <img src="../assets/prev.svg" alt="" @click="prevSlide">
-                  <img src="../assets/next.svg" alt="" @click="nextSlide" >
+                <div class="flex space-x-4">
+                  <!-- Previous Button -->
+                  <button class="flex items-center justify-center  w-12 h-12 ring-gray-400 ring-2 text-gray-100 rounded-full hover:bg-gray-500 transition duration-200" @click="nextSlide">
+                    <ArrowNarrowLeftIcon class="h-6 w-6" />
+                  </button>
+                  
+              
+                  <!-- Next Button -->
+                  <button class="flex items-center justify-center w-12 h-12 ring-2 ring-gray-400 text-gray-100 rounded-full hover:bg-gray-500 transition duration-200" @click="prevSlide">
+                    <ArrowNarrowRightIcon class="h-6 w-6" />
+                  </button>
+                  
                 </div>
               </div>
 
-            
-                <div class="flex items-center justify-center w-4/5 space-x-8 " v-for="(slide,index) in currentSlideImages" :key="index">
-                <div v-for="card in slide" :key="card.img" class="space-y-4">
-                <img :src="card.img" class="h-[40vh] w-[40vw] object-cover">
-              
-                <p class="text-white font-ataero text-xl">{{card.title}}</p>
-                <p class="text-white font-helvetica Regular text-sm" >{{card.desc}}</p>
-                </div>
+              <div class="flex items-center justify-center w-4/5 space-x-8 " v-for="(slide, index) in currentSlideImages" :key="index">
+                  <div v-for="card in slide" :key="card.img" class="space-y-4 mt-12">
+                    <div class="h-[50vh] w-[50vh] overflow-hidden">
+                      <img :src="card.img" class="h-full w-full object-cover aspect-square">
+                    </div>
+                    <p class="text-white font-ataero text-xl" v-html="card.title"></p>
+                    <p class="text-white font-helvetica text-md">{{ card.desc }}</p>
+                  </div>
               </div>
+              
               
              </div>
         
+
+             <!-- testimonials -->
+              <div class="">
+
+                <div class="mt-20 space-y-2">
+                  <p class="text-white font-helvetica text-center text-lg">CLIENT TESTIMONIALS</p>
+                  <p class="text-white font-ataero text-center text-4xl" >What Our <span class="text-violet">Clients</span>  Are Saying?</p>
+                </div>
+
+                <div class=" p-8  mt-8">
+                  <Carousel 
+                    :items-to-show="2"
+                    :items-to-scroll="1"
+                    :mouse-drag="true"
+                    :wrap-around="false"
+                    :autoplay="false"
+                    :pagination-enabled="true"
+                    class="space-y-4"
+                  >
+                    <Slide v-for="(testimonial, index) in testimonials" :key="index" class="mx-2 w-[calc(50%_-_1rem)]" >
+                      <div class="bg-[#1b1b38] p-6 rounded-lg flex flex-col justify-between text-white space-y-4 mx-4">
+                        <p class="italic text-gray-300 text-lg">
+                          "{{ testimonial.text }}"
+                        </p>
+                        <div class="border-t border-gray-600 my-2"></div>
+                        <div class="flex items-center space-x-4">
+                          <img :src="testimonial.image" alt="Author image" class="w-12 h-12 rounded-full" />
+                          <div>
+                            <strong class="text-white">{{ testimonial.name }}</strong>, <span class="text-gray-400">{{ testimonial.title }}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </Slide>
+                  </Carousel>
+              
+                  <!-- Custom Pagination -->
+                  <div class="flex justify-center space-x-2 mt-6">
+                    <button
+                      v-for="(dot, index) in testimonials.length"
+                      :key="index"
+                      @click="currentIndex = index"
+                      :class="[
+                        'w-12 h-3 rounded-lg',
+                        index === currentIndex ? 'bg-violet' : 'bg-gray-500'
+                      ]"
+                    ></button>
+                  </div>
+                </div>
+                 
+              
+                </div>
+              
 
           </div>
 
@@ -163,48 +225,80 @@
   <script>
   import { loadFull } from "tsparticles";
   import NavbarComp from '@/components/NavbarComp.vue';
+  import { ArrowNarrowLeftIcon, ArrowNarrowRightIcon} from '@heroicons/vue/outline'
+  import { Carousel, Slide } from 'vue3-carousel';
+
+
 
   export default {
     name: 'HomePage',
     components: {
       NavbarComp,
+      ArrowNarrowLeftIcon,ArrowNarrowRightIcon,
+      Carousel, Slide
+
+
     },
     data() {
       return {
+        currentIndex:0,
+        testimonials: [
+        {
+          text: "Working with ScaleFix has been a game-changer for our business. Their team truly understood our vision and crafted a marketing strategy that not only elevated our brand but also delivered real results.",
+          name: "Shema Ken",
+          title: "Retail Business Owner",
+          image: "https://randomuser.me/api/portraits/men/1.jpg"
+        },
+        {
+          text: "The team’s creativity and attention to detail were outstanding. We saw immediate results from their campaigns. Working with ScaleFix transformed our online presence. Their strategies led to a significant increase in traffic and sales!",
+          name: "Bella Melissa",
+          title: "E-commerce Entrepreneur",
+          image: "https://randomuser.me/api/portraits/women/1.jpg"
+        },
+        {
+          text: "Working with ScaleFix has been a game-changer for our business. Their team truly understood our vision and crafted a marketing strategy that not only elevated our brand but also delivered real results.",
+          name: "Shema Ken",
+          title: "Retail Business Owner",
+          image: "https://randomuser.me/api/portraits/men/1.jpg"
+        },
+      
+     
+        // Add more testimonials as needed
+      ],
 
         cards:[
 
         {
           img:require('../assets/graph.jpg'),
-          title:'Advanced Performance Marketing',
+          title:'Advanced Performance <br> Marketing',
           desc:'With our deep expertise in paid media, PPC, SEO, and multi-location marketing, we provide a competitive edge that sets us apart and help your brand stand out.'
         },
         {
           img:require('../assets/ai.jpg'),
-          title:'Tailored AI-Powered Solutions',
+          title:'Tailored AI-Powered <br> Solutions',
           desc:'We understand that one-size-fits-all approach does not  work. Our AI-powered approach creates personalized solutions that address your specific challenges and drive results.'
         },
         {
           img:require('../assets/handshake.jpg'),
-          title:'Uncompromising Competitiveness',
+          title:'Uncompromising <br> Competitiveness',
           desc:'We always put our clients needs first, carefully listening to their goals and challenges to create strategies that work for them. We build long-term partnerships'
         },
         {
-          img:require('../assets/graph.jpg'),
-          title:'Advanced Performance Marketing',
+          img:require('../assets/ai.jpg'),
+          title:'Advanced Performance <br> Marketing',
           desc:'With our deep expertise in paid media, PPC, SEO, and multi-location marketing, we provide a competitive edge that sets us apart and help your brand stand out.'
           
         },
         {
          
-          img:require('../assets/ai.jpg'),
-          title:'Uncompromising Competitiveness',
+          img:require('../assets/graph.jpg'),
+          title:'Uncompromising  <br> Competitiveness',
           desc:'We always put our clients needs first, carefully listening to their goals and challenges to create strategies that work for them. We build long-term partnerships'
 
         },
         {
-          img:require('../assets/graph.jpg'),
-          title:'Advanced Performance Marketing',
+          img:require('../assets/one.jpg'),
+          title:'Advanced Performance <br> Marketing',
           desc:'With our deep expertise in paid media, PPC, SEO, and multi-location marketing, we provide a competitive edge that sets us apart and help your brand stand out.'
         }
 
@@ -327,6 +421,8 @@
           detectRetina: true
         },
         currentSlide:0,
+        direction: 'right'
+
       }
     },
     methods: {
@@ -338,6 +434,8 @@
         }
       },
       nextSlide() {
+        this.direction = 'right'
+
       if (this.currentSlide < this.groupedImages.length - 1) {
         this.currentSlide++;
       } else {
@@ -345,6 +443,8 @@
       }
     },
     prevSlide() {
+      this.direction = 'left'
+
       if (this.currentSlide > 0) {
         this.currentSlide--;
       } else {
@@ -401,14 +501,5 @@
     width: 100%;
   }
 
-.slide-enter-active,
-.slide-leave-active {
-  transition: transform 0.5s ease;
-}
-.slide-enter {
-  transform: translateX(100%);
-}
-.slide-leave-to {
-  transform: translateX(-100%);
-}
+ 
   </style>
