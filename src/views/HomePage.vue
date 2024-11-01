@@ -148,13 +148,13 @@
                 </div>
               </div>
 
-              <div class="flex items-center justify-center w-4/5 space-x-8 " v-for="(slide, index) in currentSlideImages" :key="index">
+              <div class="flex items-center justify-center w-4/5 space-x-8 " v-for="(slide, index) in currentSlideImages" :key="index"  >
                   <div v-for="card in slide" :key="card.img" class="space-y-4 mt-12">
                     <div class="h-[50vh] w-[50vh] overflow-hidden">
                       <img :src="card.img" class="h-full w-full object-cover aspect-square">
                     </div>
                     <p class="text-white font-ataero text-xl" v-html="card.title"></p>
-                    <p class="text-white font-helvetica text-md">{{ card.desc }}</p>
+                    <p class="text-white font-helvetica text-md" id="testimonies-section">{{ card.desc }}</p>
                   </div>
               </div>
               
@@ -163,7 +163,7 @@
         
 
              <!-- testimonials -->
-              <div id="testimonies-section" >
+              <div  >
 
                 <div class="mt-20 space-y-4">
                   <p class="text-white font-helvetica text-center text-lg">CLIENT TESTIMONIALS</p>
@@ -216,22 +216,84 @@
                   <div class="absolute inset-0 bg-black opacity-70"></div>
                   <img src="../assets/colab.jpeg" class="h-[80vh] w-full object-cover">
 
-                  <div class="absolute top-24 left-20 space-y-4 flex flex-col text-white p-12 w-[60%] bg-frame ">
+                  <div class="absolute top-32 left-20 space-y-4 flex flex-col text-white p-12 w-[60%] bg-frame ">
               
                     <p class="text-5xl font-ataero">Are you ready to take your  <span class="text-violet">brand</span> to the <span class="text-violet">next</span> level ?</p>
                     <p class="text-xl font-helvetica" >Take the first step toward digital success.
                        Contact us today for a free consultation, and let's create a plan that works for your business.</p>
                     <a  href="https://calendly.com/bayinganaalain"  target="_blank" >
-                      <button class="bg-violet text-white text-lg rounded-sm font-helvetica h-[6vh] px-6 " id="services-section">Book a consultation call </button>
+                      <button class="bg-violet text-white text-lg rounded-sm font-helvetica h-[6vh] px-6 " >Book a consultation call </button>
                   </a>               
                 </div>
                 </div>
                 </div>
                  
-              
-              
-              
+              <!--contact section -->
+              <div class=" flex items-center justify-center  space-x-32 p-24 " id="contacts-section">
+                <div class="w-[45%] space-y-6">
+                 <p class="text-white font-ataero text-5xl ">Let's  <span class="text-violet">Talk</span></p>
+                 <p class="text-white font-helvetica text-2xl" >We'd love to hear from you! Whether you have a question, need more information, 
+                  or are ready to start a project, feel free to reach out.</p>
 
+                </div>
+
+                <div class=" flex items-center justify-center px-4">
+                  <div class="w-full  mx-auto">
+                    <form class="space-y-10">
+                      <div class="flex space-x-10">
+                        <!-- Name Field -->
+                        <div class="flex-1  ">
+                          <label class="block text-gray-400 text-md font-medium mb-1">Name</label>
+                          <input
+                            type="text"
+                            class="w-full border-b  border-gray-500 bg-transparent text-white focus:outline-none focus:border-violet"
+                            placeholder=" "
+                          />
+                        </div>
+                        <!-- Email Field -->
+                        <div class="flex-1">
+                          <label class="block text-gray-400 text-lg font-medium mb-1">Email address</label>
+                          <input
+                            type="email"
+                            class="w-full border-b border-gray-500 bg-transparent text-white focus:outline-none focus:border-violet"
+                            placeholder=" "
+                          />
+                        </div>
+                      </div>
+                      <!-- Message Field -->
+                      <div>
+                        <label class="block text-gray-400 text-lg font-medium mb-1">Message</label>
+                        <textarea
+                          class="w-full border-b border-gray-500 bg-transparent text-white focus:outline-none focus:border-violet h-24"
+                          placeholder=" "
+                        ></textarea>
+                      </div>
+                      <!-- Send Button -->
+                      <div class="text-center">
+                        <button
+                          type="submit"
+                          class="bg-violet tex-lg text-white py-2 px-4 rounded w-full hover:bg-violet focus:outline-none focus:ring-2 focus:ring-purple-600"
+                        >
+                          Send a message
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              <div class=" flex items-center justify-center p-24  ">
+
+                <div class="w-full space-y-4 -mb-12">
+                  <hr class=" border-t-2 border-gray-500">
+                  <div class="justify-between flex text-white font-helvetica text-lg">
+
+                  <p >Follow us </p>
+                  <p>Copyright @2024 ScaleFix.io All rights reserved</p>
+                </div>
+                </div>
+              </div>
+          
           </div>
       
   </div>
