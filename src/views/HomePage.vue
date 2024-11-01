@@ -163,33 +163,34 @@
         
 
              <!-- testimonials -->
-              <div class="">
+              <div id="testimonies-section" >
 
                 <div class="mt-20 space-y-2">
                   <p class="text-white font-helvetica text-center text-lg">CLIENT TESTIMONIALS</p>
                   <p class="text-white font-ataero text-center text-4xl" >What Our <span class="text-violet">Clients</span>  Are Saying?</p>
                 </div>
 
-                <div class=" p-8  mt-8">
-                  <Carousel 
-                    :items-to-show="2"
-                    :items-to-scroll="1"
-                    :mouse-drag="true"
-                    :wrap-around="false"
-                    :autoplay="false"
-                    :pagination-enabled="true"
-                    class="space-y-4"
-                  >
-                    <Slide v-for="(testimonial, index) in testimonials" :key="index" class="mx-2 w-[calc(50%_-_1rem)]" >
+                <div class=" p-24 -mt-10">
+                  <Carousel
+                  :items-to-show="2"
+                  :items-to-scroll="2"
+                  :mouse-drag="true"
+                  :wrap-around="false"
+                  v-model:current-slide="testimonialSlide"
+                  :pagination-enabled="false"
+                  class="space-y-4"
+                >
+                    <Slide  v-for="(testimonial, index) in visibleTestimonials" 
+                    :key="index" class="mx-2 w-[calc(50%_-_1rem)]" >
                       <div class="bg-[#1b1b38] p-6 rounded-lg flex flex-col justify-between text-white space-y-4 mx-4">
-                        <p class="italic text-gray-300 text-lg">
+                        <p class="text-helvetica text-gray-300 text-lg">
                           "{{ testimonial.text }}"
                         </p>
                         <div class="border-t border-gray-600 my-2"></div>
                         <div class="flex items-center space-x-4">
                           <img :src="testimonial.image" alt="Author image" class="w-12 h-12 rounded-full" />
                           <div>
-                            <strong class="text-white">{{ testimonial.name }}</strong>, <span class="text-gray-400">{{ testimonial.title }}</span>
+                            <strong class="text-white  text-ataero">{{ testimonial.name }}</strong>, <span class="text-gray-400">{{ testimonial.title }}</span>
                           </div>
                         </div>
                       </div>
@@ -197,27 +198,26 @@
                   </Carousel>
               
                   <!-- Custom Pagination -->
-                  <div class="flex justify-center space-x-2 mt-6">
+                  <div class="flex justify-center space-x-2 mt-12">
                     <button
-                      v-for="(dot, index) in testimonials.length"
-                      :key="index"
-                      @click="currentIndex = index"
+                      v-for="n in totalPages"
+                      :key="n"
+                      @click="currentPage = n - 1"
                       :class="[
-                        'w-12 h-3 rounded-lg',
-                        index === currentIndex ? 'bg-violet' : 'bg-gray-500'
+                        'w-12 h-3 rounded-lg transition-colors duration-200',
+                        currentPage === n - 1 ? 'bg-violet' : 'bg-gray-500'
                       ]"
+                      :aria-label="'Go to page ' + n"
                     ></button>
                   </div>
                 </div>
+                </div>
                  
               
-                </div>
+              
               
 
           </div>
-
-
-
       
   </div>
   </template>
@@ -241,7 +241,7 @@
     },
     data() {
       return {
-        currentIndex:0,
+        currentPage:0,
         testimonials: [
         {
           text: "Working with ScaleFix has been a game-changer for our business. Their team truly understood our vision and crafted a marketing strategy that not only elevated our brand but also delivered real results.",
@@ -257,11 +257,16 @@
         },
         {
           text: "Working with ScaleFix has been a game-changer for our business. Their team truly understood our vision and crafted a marketing strategy that not only elevated our brand but also delivered real results.",
-          name: "Shema Ken",
+          name: "Jane Doe",
           title: "Retail Business Owner",
           image: "https://randomuser.me/api/portraits/men/1.jpg"
         },
-      
+        {
+          text: "Working with ScaleFix has been a game-changer for our business. Their team truly understood our vision and crafted a marketing strategy that not only elevated our brand but also delivered real results.",
+          name: "Joen Doe",
+          title: "Retail Business Owner",
+          image: "https://randomuser.me/api/portraits/men/1.jpg"
+        },
      
         // Add more testimonials as needed
       ],
@@ -450,10 +455,17 @@
       } else {
         this.currentSlide = this.groupedImages.length - 1; 
       }
-    }
-     
-    
     },
+
+    handleTestimonialPage(index) {
+      this.testimonialSlide = index * 2
+    },
+    isTestimonialPageActive(index) {
+      return Math.floor(this.testimonialSlide / 2) === index
+    }
+  },
+    
+    
 
     computed:{
       groupedImages() {
@@ -466,9 +478,18 @@
     },
     currentSlideImages() {
       return this.groupedImages.slice(this.currentSlide, this.currentSlide + 1);
+    },
+    totalPages() {
+      return Math.ceil(this.testimonials.length / 2)
+    },
+    visibleTestimonials() {
+      const start = this.currentPage * 2
+      return this.testimonials.slice(start, start + 2)
     }
 
-    }
+    },
+
+    
   }
   </script>
 
