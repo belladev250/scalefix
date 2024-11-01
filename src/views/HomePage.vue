@@ -165,7 +165,7 @@
              <!-- testimonials -->
               <div id="testimonies-section" >
 
-                <div class="mt-20 space-y-2">
+                <div class="mt-20 space-y-4">
                   <p class="text-white font-helvetica text-center text-lg">CLIENT TESTIMONIALS</p>
                   <p class="text-white font-ataero text-center text-4xl" >What Our <span class="text-violet">Clients</span>  Are Saying?</p>
                 </div>
@@ -210,6 +210,21 @@
                       :aria-label="'Go to page ' + n"
                     ></button>
                   </div>
+                </div>
+
+                <div class="relative">
+                  <div class="absolute inset-0 bg-black opacity-70"></div>
+                  <img src="../assets/colab.jpeg" class="h-[80vh] w-full object-cover">
+
+                  <div class="absolute top-24 left-20 space-y-4 flex flex-col text-white p-12 w-[60%] bg-frame ">
+              
+                    <p class="text-5xl font-ataero">Are you ready to take your  <span class="text-violet">brand</span> to the <span class="text-violet">next</span> level ?</p>
+                    <p class="text-xl font-helvetica" >Take the first step toward digital success.
+                       Contact us today for a free consultation, and let's create a plan that works for your business.</p>
+                    <a  href="https://calendly.com/bayinganaalain"  target="_blank" >
+                      <button class="bg-violet text-white text-lg rounded-sm font-helvetica h-[6vh] px-6 " id="services-section">Book a consultation call </button>
+                  </a>               
+                </div>
                 </div>
                 </div>
                  
