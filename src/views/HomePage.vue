@@ -1,5 +1,5 @@
   <template>
-  <div class="h-screen relative w-full">
+  <div class="h-screen relative w-full overflow-x-hidden">
     <Particles
     id="tsparticles"
     :particlesInit="particlesInit"
@@ -63,7 +63,7 @@
 
               <div class="">
                 <a  href="https://calendly.com/bayinganaalain"  target="_blank" >
-                  <button class="bg-violet text-white text-md rounded-sm font-helvetica h-[6vh] px-4 ">Book a consultation call </button>
+                  <button class="bg-violet text-white text-md rounded-sm font-helvetica h-[6vh] px-4 py-2">Book a consultation call </button>
               </a>            </div>
             </div>
             <div class="">
