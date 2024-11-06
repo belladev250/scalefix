@@ -152,7 +152,7 @@
                       <transition name="fade-slide-right" v-if="isVisible1" appear>
                       <p class="text-white font-ataero text-lg md:text-2xl">{{ value.title1 }}</p>
                       </transition>
-                      
+
                       <transition name="fade-slide-right" v-if="isVisible1" appear>
                       <p class="text-white font-ataero text-lg md:text-2xl">{{ value.title2 }}</p>
                     </transition>
@@ -170,37 +170,53 @@
             </div>
 
 
-                
+                <div class="" ref="observerElement2" >
                 <div class="w-full relative">
                   <div class="absolute inset-0 bg-black opacity-70"></div>
                   <img src="../assets/wokers.jpeg" class="h-[65vh] w-full object-cover">
 
                   <div class="absolute inset-0  space-y-2 flex flex-col items-center justify-center text-center text-white px-4" >
                   
+                       <transition name="slide-up" v-if="isVisible2" appear >
                       <p class="text-4xl font-ataero"> <span class="text-violet">ScaleFix</span> is a one-click step to an</p>
-                      <p class="text-4xl font-ataero">excellent digital <span class="text-violet">marketing</span> </p>
+                    </transition>
+                    <transition name="slide-up" v-if="isVisible2" appear >
+                  <p class="text-4xl font-ataero">excellent digital <span class="text-violet">marketing</span> </p>
+                   </transition>
+                   <transition name="slide-up" v-if="isVisible2" appear >
                       <p class="text-lg font-helvetica" >Let's Grow Together  Discover How We Can Help Your Business Thrive.</p>
+                      </transition>
+
+                      <transition name="fade-slide-up" v-if="isVisible2" appear  >
                       <a  href="https://calendly.com/bayinganaalain"  target="_blank" >
-                        <button class="bg-violet text-white text-md rounded-sm font-helvetica h-[6vh] px-4 " id="services-section">Book a consultation call </button>
-                    </a>               
+                        <button class="bg-violet text-white text-md rounded-sm font-helvetica h-[6vh] px-4 " >Book a consultation call </button>
+                      </a>    
+                      </transition>           
                   </div>
                 </div>
+              </div>
 
 
              
 
                 <!-- Our service section -->
-                <div class="flex flex-col items-center justify-center space-y-4 mt-20">
+                 <div ref="observerElement3"> 
+                <div class="flex flex-col items-center justify-center space-y-4 mt-20" id="services-section">
                   <div class="w-4/5 md:w-4/5">
+                    <transition name="fade-slide-up" v-if="isVisible3" appear >
                     <p class="text-white self-start text-lg font-helvetica Regural">
                       Our services
                     </p>
+                  </transition>
                   </div>
                   
                   <div class="flex flex-col md:flex-row justify-between w-4/5 space-y-4 md:space-y-0">
+                    <transition name="fade-slide-left" v-if="isVisible3" appear >
+
                     <p class="text-white font-ataero text-3xl md:text-4xl text-center md:text-left">
                       What is in for <span class="text-violet">you?</span>
                     </p>
+                    </transition>
                     
                     <div class="flex space-x-4 justify-center md:justify-end">
                       <!-- Previous Button -->
@@ -232,35 +248,46 @@
                       class="space-y-4 mt-12 w-full md:w-auto"
                     >
                       <div class="h-[30vh] md:h-[50vh] w-full md:w-[50vh] overflow-hidden">
+                    <transition name="zoom" v-if="isVisible3" appear >
                         <img 
                           :src="card.img" 
                           class="h-full w-full object-cover aspect-square"
                         >
+                      </transition>
                       </div>
+                      <transition  name="slide-up" v-if="isVisible3" appear >
                       <p 
                         class="text-white font-ataero text-lg md:text-xl text-center md:text-left" 
                         v-html="card.title"
                       ></p>
+                    </transition>
+                    <transition name="fade-slide-left" v-if="isVisible3" appear >
                       <p 
                         class="text-white font-helvetica text-sm md:text-md text-center md:text-left" 
-                        id="testimonies-section"
                       >
                         {{ card.desc }}
                       </p>
+                    </transition>
                     </div>
                   </div>
                 </div>
+
+              </div>
             
 
                 <!-- testimonials -->
-                  <div  >
+                  <div ref="observerElement5"  >
 
-                    <div class="mt-20 space-y-4">
+                    <div class="mt-20 space-y-4"  >
+                      <transition name="slide-up" v-if="isVisible5" appear >
                       <p class="text-white font-helvetica text-center text-lg">CLIENT TESTIMONIALS</p>
+                    </transition>
+                    <transition name="fade-slide-up" v-if="isVisible5" appear >
                       <p class="text-white font-ataero text-center text-4xl" >What Our <span class="text-violet">Clients</span>  Are Saying?</p>
+                    </transition>
                     </div>
 
-                    <div class="p-4 mt-12 md:p-24  md:-mt-10 ">
+                    <div class="p-4 mt-12 md:p-24  md:-mt-10 "  >
                       <Carousel
                         :items-to-show="isMobile ? 1 : 2"
                         :items-to-scroll="isMobile ? 1 : 2"
@@ -283,13 +310,18 @@
                         <Slide
                           v-for="(testimonial, index) in visibleTestimonials"
                           :key="index"
-                          class="mx-2 w-full md:w-[calc(50%_-_1rem)]"
+                          class="mx-2 w-full md:w-[calc(50%_-_1rem)]" 
                         >
                           <div class="bg-[#1b1b38] p-4 md:p-6 rounded-lg flex flex-col justify-between text-white space-y-4 mx-2 md:mx-4">
-                            <p class="text-helvetica text-gray-300 text-base md:text-lg">
+                            <transition name="fade-slide-up" v-if="isVisible5" appear >
+
+                            <p class="text-helvetica text-gray-300 text-base md:text-lg"  >
                               "{{ testimonial.text }}"
                             </p>
-                            <div class="border-t border-gray-600 my-2"></div>
+
+                            </transition>
+                            
+                            <div class="border-t border-gray-600 my-2" id="testimonies-section" ></div>
                             <div class="flex flex-col md:flex-row items-start md:items-center space-y-2 md:space-y-0 md:space-x-4">
                               <img 
                                 :src="testimonial.image" 
@@ -297,12 +329,18 @@
                                 class="w-10 h-10 md:w-12 md:h-12 rounded-full"
                               />
                               <div class="flex flex-col md:flex-row md:items-center space-y-1 md:space-y-0">
+                                <transition name="fade-slide-right" v-if="isVisible5" appear >
                                 <strong class="text-white text-ataero text-sm md:text-base">
                                   {{ testimonial.name }}
                                 </strong>
+                                </transition>
+
+                                <transition name="fade-slide-right" v-if="isVisible5" appear >
+
                                 <span class="text-gray-400 text-sm md:text-base md:ml-2">
                                   {{ testimonial.title }}
                                 </span>
+                                </transition>
                               </div>
                             </div>
                           </div>
@@ -324,7 +362,9 @@
                       </div>
                     </div>
 
-                    <div class="relative">
+                  </div>
+
+                    <div class="relative" ref="observerElement6">
                       <div class="absolute inset-0 bg-black opacity-70"></div>
                       <img 
                         src="../assets/colab.jpeg" 
@@ -332,52 +372,65 @@
                       >
                       
                       <div 
-                        class="absolute top-8 md:top-32 left-4 md:left-20 space-y-4 flex flex-col 
-                              text-white p-6 md:p-12 w-[90%] md:w-[60%] bg-frame"
+                        class="absolute top-8 md:top-32 left-4 md:left-20 space-y-4 flex flex-col  text-white p-6 md:p-12 w-[90%] md:w-[60%] bg-frame"
                       >
+                      <transition name="slide-up" v-if="isVisible6" appear >
                         <p class="text-2xl md:text-5xl font-ataero leading-tight">
                           Are you ready to take your 
                           <span class="text-violet">brand</span> to the 
                           <span class="text-violet">next</span> level?
                         </p>
+
+                        </transition>
                         
+                        <transition name="fade-slide-up" v-if="isVisible6" appear >
+
                         <p class="text-base md:text-xl font-helvetica">
                           Take the first step toward digital success.
                           Contact us today for a free consultation, and let's create a plan that works for your business.
                         </p>
+
+                        </transition>
                         
                         <a 
                           href="https://calendly.com/bayinganaalain" 
                           target="_blank" 
                           class="inline-block w-full md:w-auto"
                         >
+                        <transition name="fade-slide-up" v-if="isVisible6" appear >
+
                           <button 
                             class="bg-violet text-white text-base md:text-lg rounded-sm font-helvetica 
                                   h-[6vh] px-4 md:px-6 w-full md:w-auto"
                           >
                             Book a consultation call
                           </button>
+                          </transition>
                         </a>
                       </div>
                     </div>
 
-                    </div>
+                  
                     
                   <!--contact section -->
+                  <div ref="observerElement7">
                   <div 
-                  class="flex flex-col md:flex-row items-center justify-center md:space-x-32 
-                        space-y-8 md:space-y-0 p-6 md:p-24" 
-                  id="contacts-section"
-                >
+                  class="flex flex-col md:flex-row items-center justify-center md:space-x-32 space-y-8 md:space-y-0 p-6 md:p-24" 
+                  id="contacts-section">
                   <!-- Text Content -->
                   <div class="w-full mt-12 md:mt-0  space-y-4 md:space-y-6">
+                    <transition name="slide-up" v-if="isVisible7" appear>
                     <p class="text-white font-ataero text-3xl md:text-5xl text-center md:text-left">
                       Let's <span class="text-violet">Talk</span>
                     </p>
+                  </transition>
+                  <transition name="fade-slide-right" v-if="isVisible7" appear>
+
                     <p class="text-white font-helvetica text-lg md:text-2xl text-center md:text-left">
                       We'd love to hear from you! Whether you have a question, need more information, 
                       or are ready to start a project, feel free to reach out.
                     </p>
+                    </transition>
                   </div>
               
                   <!-- Form Section -->
@@ -440,6 +493,7 @@
                     </div>
                   </div>
                 </div>
+              </div>
 
                 <div class="flex items-center justify-center p-6 md:p-24">
                   <div class="w-full space-y-4 mb-12 mt-10 md:mt-0  md:-mb-20 ">
@@ -481,6 +535,12 @@
             currentPage:0,
             isVisible:false,
             isVisible1:false,
+            isVisible2:false,
+            isVisible3:false,
+            isVisible4:false,
+            isVisible5:false,
+            isVisible6:false,
+            isVisible7:false,
             testimonials: [
             {
               text: "Working with ScaleFix has been a game-changer for our business. Their team truly understood our vision and crafted a marketing strategy that not only elevated our brand but also delivered real results.",
@@ -675,6 +735,13 @@
 
           this.initiativeAnimations();
           this.missoutAnimations();
+          this.blogAnimations();
+          this.galleryAnimations();
+          this.notableAnimations();
+          this.background();
+          this.background2();
+
+
         },
         methods: {
           async particlesInit(engine) {
@@ -748,7 +815,7 @@
       }
     });
   }, {
-    threshold: 0.5
+    threshold: 0.1
   });
 
   observer.observe(this.$refs.observerElement2);
@@ -762,7 +829,7 @@
       }
     });
   }, {
-    threshold: 0.5
+    threshold: 0.1
   });
 
   observer.observe(this.$refs.observerElement3);
@@ -790,11 +857,40 @@
       }
     });
   }, {
-    threshold: 0.5
+    threshold: 0.1
   });
 
   observer.observe(this.$refs.observerElement5);
   },
+
+  background() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        this.isVisible6 = true;
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+  observer.observe(this.$refs.observerElement6);
+
+  },
+
+  background2() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        this.isVisible7 = true;
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+  observer.observe(this.$refs.observerElement7);
+
+  },
+
 
       },
         
@@ -964,7 +1060,7 @@
       
       /* Zoom In */
       .zoom-enter-active {
-        transition: all 0.7s ease;
+        transition: all 0.9s ease;
       }
       
       .zoom-enter-from {
