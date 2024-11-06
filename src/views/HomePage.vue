@@ -8,52 +8,47 @@
     class="absolute inset-0"
   />
 
-      <div class="relative h-screen min-h-[400px] max-h-[670px] sm:max-h-[800px] lg:max-h-[900px] xl:max-h-[1000px] ">
+  <div class="relative h-screen min-h-[400px] max-h-[670px] sm:max-h-[800px] lg:max-h-[900px] xl:max-h-[1000px] overflow-hidden">
+    <NavbarComp />
+    <div class="absolute inset-0 z-0">
+      <img src="../assets/background.jpg" alt="Background" class="h-full w-full object-cover">
+    </div>
 
-          <NavbarComp/>
-          <div class="absolute inset-0 z-0">
-          <img src="../assets/background.jpg" alt="Background" class="h-full w-full object-cover">
+    <div class="absolute text-white top-1/3 xl:top-1/3 ml-4 sm:ml-8 lg:ml-16 space-y-2 z-10">
+      <p class="font-helvetica font-bold text-md sm:text-lg md:text-xl">WELCOME TO SCALEFIX,</p>
+      <div class="flex flex-wrap sm:space-x-2">
+        <p class="text-white font-ataero text-5xl sm:text-6xl lg:text-8xl">Creative</p>
+        <p class="text-violet font-ataero text-5xl sm:text-6xl lg:text-8xl">Strategies,</p>
+      </div>
+      <div class="flex flex-wrap w-full space-x-2 sm:space-x-10 mt-4 sm:mt-4 ">
+        <div class="w-full sm:w-1/2">
+          <p class="font-helvetica text-sm sm:text-base lg:text-lg">
+            Empower your brand with custom digital marketing solutions that increase visibility,
+             build strong connections with customers, and help your business grow. We use creativity and smart strategies 
+            to make sure your brand succeeds online.
+          </p>
         </div>
-        
-          <div class=" absolute  text-white   top-1/3   xl:1/3 ml-16 space-y-2  z-10" >
-            <p class="font-helvetica font-bold white-text  text-md ml-2">WELCOME TO SCALEFIX,</p>
-            <div class="flex space-x-2">
-              <p class="text-white font-ataero Regular text-8xl ">Creative </p>
-              <p class="text-violet font-ataero Regular text-8xl">Strategies,</p>
-            </div>
-            <div class=" flex w-full space-x-10">
-              <div class="w-1/2">
-              <p class="font-helvetica mt-2 text-md">Empower your brand with custom digital marketing solutions that increase visibility,
-                  build strong connections with customers, and help your business grow. We use creativity and smart strategies to 
-                  make sure your brand succeeds online.</p>
-            </div>
-
-              <div class="space-x-2 flex mt-12 ">
-                  <p class="text-white font-ataero Regular text-8xl ">Real</p>
-                  <p class="text-violet font-ataero Regular text-8xl ">Impact</p>
-              </div>
-            </div>
-            
-          </div>
-
-        
-
-    
-    
+        <div class="flex flex-wrap space-x-2 sm:space-x-4 mt-6 sm:mt-12">
+          <p class="text-white font-ataero text-5xl sm:text-6xl lg:text-8xl">Real</p>
+          <p class="text-violet font-ataero text-5xl sm:text-6xl lg:text-8xl">Impact</p>
         </div>
+      </div>
+    </div>
+  </div>
+
 
 
         <!--second sectionnnnnnnnnnnnnnnnnn-->
         <div class="bg-frame h-auto  relative z-20 " id="about-section" >
           <!-- ABOUT US SECTION -->
 
-          <div class="flex items-center justify-center w-full p-24 space-x-4">
+          <div class="flex items-center justify-center w-full p-4 md:p-24 space-x-4">
 
-            <div class="space-y-4 ">
-            <div class="space-y-6 w-[85vh] h-[60vh] "> 
+            <div class=" space-y-0 md:space-y-4 mt-10 md:mt-0">
+            <div class="space-y-6 w-full md:w-[85vh] h-[60vh]"> 
               <p class="text-white font-helvetica text-md ">ABOUT SCALEFIX</p>
-              <div class="flex text-4xl  text-white font-ataero ">
-              <p>Your trusted <span class="text-violet"> partner</span> for digital  <span class="text-violet">marketing .</span></p>
+              <div class="flex text-3xl md:text-4xl  text-white font-ataero ">
+              <p>Your trusted <span class="text-violet"> partner</span> for digital <span class="text-violet">marketing .</span></p>
             </div>
               <p class="text-white font-helvetica md:text-xl 2xl:text-2xl">
                 We are a dynamic digital marketing agency dedicated to helping businesses grow and thrive in the digital landscape.
@@ -67,13 +62,13 @@
               </a>            </div>
             </div>
             <div class="">
-              <img src="../assets/hi5.jpg" class="h-[60vh] object-cover ">
+              <img src="../assets/hi5.jpg" class="h-[60vh] object-cover  ">
             </div>
           </div>
 
           
 
-          <div class="space-y-6">
+          <div class="hidden space-y-0 md:block space-y-6">
             <div class="">
               <img src="../assets/woman.jpg" class="h-[60vh] object-cover">
             </div>
@@ -85,8 +80,8 @@
 
           </div>
 
-        
-            <div class="space-y-2">
+                <div class="space-y-10 md:space-y-0">
+            <div class="space-y-2 mt-12 md:mt-0">
           
               <p class="text-center text-white font-helvetica Regular text-xl ">Our values</p>
               <p class="text-center text-white font-ataero text-3xl" >Why are <span class="text-violet" >brands</span> choosing <span class="text-violet" >us?</span></p>
@@ -94,19 +89,28 @@
             <p class="text-center text-white font-helvetica text-lg"> and delivering results that matter.</p>
           </div>
     
-            <div class="  grid grid-cols-3 gap-4 w-full p-24">
-            
-              <div class=" border -2 border-white  p-4 h-[38vh] space-y-20 "  v-for="(value ,index) in values" :key="index" >
-                <div >
-                <img :src="value.image">
-              </div>
-              <div class="">
-                <p class="text-violet font-ataero text-xl font-bold" >{{value.id}}</p>
-                <p class="text-white font-ataero text-xl" >{{value.title1}}</p>
-                <p class="text-white font-ataero text-xl">{{value.title2}}</p>
-              </div>
+        
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full p-6 md:p-24">
+              <div class="border -2 border-white p-4 h-auto md:h-[42vh] space-y-4 md:space-y-20" v-for="(value, index) in values" :key="index">
+                <div>
+                  <img :src="value.image"  class="h-[8vh]"  >
+                </div>
+                <div class=" space-y-2 hidden md:block  ">
+                  <p class="text-violet font-ataero text-lg md:text-2xl font-bold">{{ value.id }}</p>
+                  <p class="text-white font-ataero text-lg md:text-2xl">{{ value.title1 }}</p>
+                  <p class="text-white font-ataero text-lg md:text-2xl">{{ value.title2 }}</p>
+                </div>
+
+                <div class="space-y-2 block md:hidden">
+                  <p class="text-violet font-ataero text-lg md:text-xl font-bold">{{ value.id }}</p>
+                  <p class="text-white font-ataero text-lg md:text-xl">{{ value.title1 }} {{ value.title2 }}</p>
+                </div>
+
               </div>
             </div>
+          </div>
+
+
              
             <div class="w-full relative">
               <div class="absolute inset-0 bg-black opacity-70"></div>
@@ -127,39 +131,66 @@
 
 
             <!-- Our service section -->
-             <div class="flex flex-col items-center justify-center  space-y-4 mt-20" >
-              <div class="w-4/5">
-              <p class="text-white self-start  text-lg font-helvetica Regural">Our services</p>
-            </div>
-              <div class="flex justify-between  w-4/5">
-                <p class="text-white font-ataero text-4xl" >What is in for  <span class="text-violet" >you?</span></p>
-                <div class="flex space-x-4">
-                  <!-- Previous Button -->
-                  <button class="flex items-center justify-center  w-12 h-12 ring-gray-400 ring-2 text-gray-100 rounded-full hover:bg-gray-500 transition duration-200" @click="nextSlide">
-                    <ArrowNarrowLeftIcon class="h-6 w-6" />
-                  </button>
-                  
+            <div class="flex flex-col items-center justify-center space-y-4 mt-20">
+              <div class="w-4/5 md:w-4/5">
+                <p class="text-white self-start text-lg font-helvetica Regural">
+                  Our services
+                </p>
+              </div>
               
-                  <!-- Next Button -->
-                  <button class="flex items-center justify-center w-12 h-12 ring-2 ring-gray-400 text-gray-100 rounded-full hover:bg-gray-500 transition duration-200" @click="prevSlide">
-                    <ArrowNarrowRightIcon class="h-6 w-6" />
+              <div class="flex flex-col md:flex-row justify-between w-4/5 space-y-4 md:space-y-0">
+                <p class="text-white font-ataero text-3xl md:text-4xl text-center md:text-left">
+                  What is in for <span class="text-violet">you?</span>
+                </p>
+                
+                <div class="flex space-x-4 justify-center md:justify-end">
+                  <!-- Previous Button -->
+                  <button 
+                    class="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 ring-gray-400 ring-2 text-gray-100 rounded-full hover:bg-gray-500 transition duration-200" 
+                    @click="nextSlide"
+                  >
+                    <ArrowNarrowLeftIcon class="h-5 w-5 md:h-6 md:w-6" />
                   </button>
                   
+                  <!-- Next Button -->
+                  <button 
+                    class="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 ring-2 ring-gray-400 text-gray-100 rounded-full hover:bg-gray-500 transition duration-200" 
+                    @click="prevSlide"
+                  >
+                    <ArrowNarrowRightIcon class="h-5 w-5 md:h-6 md:w-6" />
+                  </button>
                 </div>
               </div>
-
-              <div class="flex items-center justify-center w-4/5 space-x-8 " v-for="(slide, index) in currentSlideImages" :key="index"  >
-                  <div v-for="card in slide" :key="card.img" class="space-y-4 mt-12">
-                    <div class="h-[50vh] w-[50vh] overflow-hidden">
-                      <img :src="card.img" class="h-full w-full object-cover aspect-square">
-                    </div>
-                    <p class="text-white font-ataero text-xl" v-html="card.title"></p>
-                    <p class="text-white font-helvetica text-md" id="testimonies-section">{{ card.desc }}</p>
+          
+              <div 
+                class="flex flex-col md:flex-row items-center justify-center w-4/5 md:space-x-8 space-y-8 md:space-y-0" 
+                v-for="(slide, index) in currentSlideImages" 
+                :key="index"
+              >
+                <div 
+                  v-for="card in slide" 
+                  :key="card.img" 
+                  class="space-y-4 mt-12 w-full md:w-auto"
+                >
+                  <div class="h-[30vh] md:h-[50vh] w-full md:w-[50vh] overflow-hidden">
+                    <img 
+                      :src="card.img" 
+                      class="h-full w-full object-cover aspect-square"
+                    >
                   </div>
+                  <p 
+                    class="text-white font-ataero text-lg md:text-xl text-center md:text-left" 
+                    v-html="card.title"
+                  ></p>
+                  <p 
+                    class="text-white font-helvetica text-sm md:text-md text-center md:text-left" 
+                    id="testimonies-section"
+                  >
+                    {{ card.desc }}
+                  </p>
+                </div>
               </div>
-              
-              
-             </div>
+            </div>
         
 
              <!-- testimonials -->
@@ -366,22 +397,22 @@
           desc:'We always put our clients needs first, carefully listening to their goals and challenges to create strategies that work for them. We build long-term partnerships'
         },
         {
-          img:require('../assets/ai.jpg'),
-          title:'Advanced Performance <br> Marketing',
-          desc:'With our deep expertise in paid media, PPC, SEO, and multi-location marketing, we provide a competitive edge that sets us apart and help your brand stand out.'
+          img:require('../assets/3.jpg'),
+          title:'Delivering Measurable <br>  Results ',
+          desc:'Your success is our success. We are deeply committed to delivering results by using a data-driven approach that ensures every strategy is effective.'
           
         },
         {
          
-          img:require('../assets/graph.jpg'),
-          title:'Uncompromising  <br> Competitiveness',
-          desc:'We always put our clients needs first, carefully listening to their goals and challenges to create strategies that work for them. We build long-term partnerships'
+          img:require('../assets/2.jpg'),
+          title:'Collaboration and <br> Partnership',
+          desc:'We are more than just a service provider; we are your strategic partner. Your input is invaluable, and we are committed to a collaborative approach that delivers customized solutions.'
 
         },
         {
-          img:require('../assets/one.jpg'),
-          title:'Advanced Performance <br> Marketing',
-          desc:'With our deep expertise in paid media, PPC, SEO, and multi-location marketing, we provide a competitive edge that sets us apart and help your brand stand out.'
+          img:require('../assets/1.jpg'),
+          title:'Long-Term Commitment and  <br> Support',
+          desc:'Our partnership does not  end with a campaign. We are committed to your long-term success and provide ongoing support, maintenance, and performance tracking to ensure your business continues to grow and evolve.'
         }
 
 

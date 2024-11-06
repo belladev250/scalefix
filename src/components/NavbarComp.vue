@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="overflow-x-hidden">
       <!-- Desktop and Mobile Navbar Container -->
       <div class="fixed z-50 top-0 left-0 w-full bg-white/2 backdrop-blur-md border-b border-white/20 shadow-sm text-white">
         <!-- Desktop Navbar -->
@@ -13,10 +13,10 @@
               v-for="(item, index) in navItems" 
               :key="index"
               @click="scrollToSection(item.id)"
-              class="text-white text-md font-helvetica cursor-pointer relative hover:text-violet transition-colors duration-300 group"
+              class="text-white text-md font-helvetica cursor-pointer relative hover:text-white transition-colors duration-300 group"
             >
               {{ item.label }}
-              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-violet transition-all duration-300 group-hover:w-full"></span>
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
             </li>
           </ul>
           
@@ -76,7 +76,7 @@
                 v-for="(item, index) in navItems" 
                 :key="index"
                 @click="scrollToSectionMobile(item.id)"
-                class="text-white text-md font-helvetica cursor-pointer hover:text-violet transition-colors duration-300"
+                class="text-white text-md font-helvetica cursor-pointer hover:text-white transition-colors duration-300"
               >
                 {{ item.label }}
               </li>
