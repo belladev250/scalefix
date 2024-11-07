@@ -245,7 +245,7 @@
                     <div 
                       v-for="card in slide" 
                       :key="card.img" 
-                      class="space-y-4 mt-12 w-full md:w-auto"
+                      class="space-y-4 mt-12 w-full md:w-auto"  
                     >
                       <div class="h-[30vh] md:h-[50vh] w-full md:w-[50vh] overflow-hidden">
                     <transition name="zoom" v-if="isVisible3" appear >
@@ -287,7 +287,7 @@
                     </transition>
                     </div>
 
-                    <div class="p-4 mt-12 md:p-24  md:-mt-10 "  >
+                    <div class="p-4 mt-12 md:p-24  md:-mt-10 " >
                       <Carousel
                         :items-to-show="isMobile ? 1 : 2"
                         :items-to-scroll="isMobile ? 1 : 2"
@@ -308,12 +308,12 @@
                         }"
                       >
                         <Slide
-                          v-for="(testimonial, index) in visibleTestimonials"
+                          v-for="(testimonial, index) in visibleTestimonials" 
                           :key="index"
-                          class="mx-2 w-full md:w-[calc(50%_-_1rem)]" 
+                          class="mx-2 w-full md:w-[calc(50%_-_1rem)]"  
                         >
-                          <div class="bg-[#1b1b38] p-4 md:p-6 rounded-lg flex flex-col justify-between text-white space-y-4 mx-2 md:mx-4">
-                            <transition name="fade-slide-up" v-if="isVisible5" appear >
+                          <div class="bg-[#1b1b38] p-4 md:p-6 rounded-lg flex flex-col justify-between text-white space-y-4 mx-2 md:mx-4" >
+                            <transition name="fade-slide-up" v-if="isVisible5" appear  >
 
                             <p class="text-helvetica text-gray-300 text-base md:text-lg"  >
                               "{{ testimonial.text }}"
@@ -321,14 +321,14 @@
 
                             </transition>
                             
-                            <div class="border-t border-gray-600 my-2" id="testimonies-section" ></div>
-                            <div class="flex flex-col md:flex-row items-start md:items-center space-y-2 md:space-y-0 md:space-x-4">
+                            <div class="border-t border-gray-600 my-2" ></div>
+                            <div class="flex flex-col md:flex-row items-start md:items-center space-y-2 md:space-y-0 md:space-x-4" >
                               <img 
                                 :src="testimonial.image" 
                                 alt="Author image" 
                                 class="w-10 h-10 md:w-12 md:h-12 rounded-full"
                               />
-                              <div class="flex flex-col md:flex-row md:items-center space-y-1 md:space-y-0">
+                              <div class="flex flex-col md:flex-row md:items-center space-y-1 md:space-y-0"  id="testimonies-section" >
                                 <transition name="fade-slide-right" v-if="isVisible5" appear >
                                 <strong class="text-white text-ataero text-sm md:text-base">
                                   {{ testimonial.name }}
@@ -337,7 +337,7 @@
 
                                 <transition name="fade-slide-right" v-if="isVisible5" appear >
 
-                                <span class="text-gray-400 text-sm md:text-base md:ml-2">
+                                <span class="text-gray-400 text-sm md:text-base md:ml-2" >
                                   {{ testimonial.title }}
                                 </span>
                                 </transition>
@@ -348,7 +348,7 @@
                       </Carousel>
                   
                       <!-- Custom Pagination -->
-                      <div class="flex justify-center space-x-1 md:space-x-2 mt-8 md:mt-12">
+                      <div class="flex justify-center space-x-1 md:space-x-2 mt-8 md:mt-12"  >
                         <button
                           v-for="n in totalPages"
                           :key="n"
