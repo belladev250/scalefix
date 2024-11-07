@@ -500,8 +500,10 @@
                     <hr class="border-t-2 border-gray-500">
                     <div class="flex flex-col md:flex-row md:justify-between text-white font-helvetica 
                                 text-sm md:text-lg space-y-4 md:space-y-0 text-center md:text-left">
-                      <p class=" text-white hover:text-violet transition duration-300" >Follow us on   <i class="fab fa-instagram" aria-hidden="true"></i>
-                      </p>
+
+                <a href="https://www.instagram.com/alainbayingana_?igsh=cTN4dzI2MHpqcG42" class=" text-white hover:text-violet transition duration-300" target="_blank">Follow us on   <i class="fab fa-instagram" aria-hidden="true"></i></a>
+                      
+                      
                       <p class="text-gray-300 md:text-white">
                         Copyright @2024 ScaleFix.io All rights reserved
                       </p>
