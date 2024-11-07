@@ -372,7 +372,7 @@
                       >
                       
                       <div 
-                        class="absolute top-8 md:top-32 left-4 md:left-20 space-y-4 flex flex-col  text-white p-6 md:p-12 w-[90%] md:w-[60%] bg-frame"
+                        class="absolute top-12 md:top-8 md:top-32 left-4 md:left-20 space-y-4 flex flex-col  text-white p-6 md:p-12 w-[90%] md:w-[60%] bg-frame"
                       >
                       <transition name="slide-up" v-if="isVisible6" appear >
                         <p class="text-2xl md:text-5xl font-ataero leading-tight">
@@ -436,7 +436,7 @@
                   <!-- Form Section -->
                   <div class="flex items-center justify-center w-full px-4">
                     <div class="w-full mx-auto">
-                      <form class="space-y-6 md:space-y-10">
+                      <form class="space-y-6 md:space-y-10" @submit.prevent="sendEmail">
                         <!-- Name and Email Fields -->
                         <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-10">
                           <!-- Name Field -->
@@ -448,7 +448,7 @@
                               type="text"
                               class="w-full border-b border-gray-500 bg-transparent text-white 
                                     focus:outline-none focus:border-violet py-2"
-                              placeholder=" "
+                              placeholder=" " v-model="name"  name="from_name"
                             />
                           </div>
               
@@ -461,7 +461,7 @@
                               type="email"
                               class="w-full border-b border-gray-500 bg-transparent text-white 
                                     focus:outline-none focus:border-violet py-2"
-                              placeholder=" "
+                              placeholder=" " v-model="email" name="from_email"
                             />
                           </div>
                         </div>
@@ -474,7 +474,7 @@
                           <textarea
                             class="w-full border-b border-gray-500 bg-transparent text-white 
                                   focus:outline-none focus:border-violet h-20 md:h-24"
-                            placeholder=" "
+                            placeholder=" " v-model="message"  name="message"
                           ></textarea>
                         </div>
               
@@ -500,7 +500,8 @@
                     <hr class="border-t-2 border-gray-500">
                     <div class="flex flex-col md:flex-row md:justify-between text-white font-helvetica 
                                 text-sm md:text-lg space-y-4 md:space-y-0 text-center md:text-left">
-                      <p>Follow us</p>
+                      <p class=" text-white hover:text-violet transition duration-300" >Follow us on   <i class="fab fa-instagram" aria-hidden="true"></i>
+                      </p>
                       <p class="text-gray-300 md:text-white">
                         Copyright @2024 ScaleFix.io All rights reserved
                       </p>
@@ -518,6 +519,8 @@
       import NavbarComp from '@/components/NavbarComp.vue';
       import { ArrowNarrowLeftIcon, ArrowNarrowRightIcon} from '@heroicons/vue/outline'
       import { Carousel, Slide } from 'vue3-carousel';
+      import emailjs from 'emailjs-com';
+
 
 
 
@@ -541,6 +544,10 @@
             isVisible5:false,
             isVisible6:false,
             isVisible7:false,
+
+            name:'',
+            email:'',
+            message:'',
             testimonials: [
             {
               text: "Working with ScaleFix has been a game-changer for our business. Their team truly understood our vision and crafted a marketing strategy that not only elevated our brand but also delivered real results.",
@@ -550,22 +557,22 @@
             },
 
             {
-              text: "Working with ScaleFix has been a game-changer for our business. Their team truly understood our vision and crafted a marketing strategy that not only elevated our brand but also delivered real results.",
+              text: "ScaleFix's creativity and attention to detail were outstanding. Their strategies quickly boosted our online presence, driving significant increases in traffic and sales!",
               name: "Bella Melissa",
               title: "E-commerce Entrepreneur",
               image: "https://randomuser.me/api/portraits/women/1.jpg"
             },
             {
-              text: "Working with ScaleFix has been a game-changer for our business. Their team truly understood our vision and crafted a marketing strategy that not only elevated our brand but also delivered real results.",
-              name: "Jane Doe",
+              text: "Working with ScaleFix has been transformative for our business. Their team understood our vision and created a marketing strategy that not only boosted our brand but also achieved impactful results.",
+              name: "John Doe",
               title: "Retail Business Owner",
               image: "https://randomuser.me/api/portraits/men/1.jpg"
             },
             {
-              text: "Working with ScaleFix has been a game-changer for our business. Their team truly understood our vision and crafted a marketing strategy that not only elevated our brand but also delivered real results.",
-              name: "Joen Doe",
-              title: "Retail Business Owner",
-              image: "https://randomuser.me/api/portraits/men/1.jpg"
+              text: "ScaleFix's creativity and attention to detail were outstanding. Their strategies quickly boosted our online presence, driving significant increases in traffic and sales!",
+              name: "Jane Williams",
+              title: "E-commerce Entrepreneur",
+              image: "https://randomuser.me/api/portraits/women/1.jpg"
             },
         
             // Add more testimonials as needed
@@ -890,6 +897,29 @@
   observer.observe(this.$refs.observerElement7);
 
   },
+
+  sendEmail(e) {
+  try {
+    
+    emailjs.sendForm('service_loh6ei9', 'template_ohk17hg', e.target, 'l0zn_DcwDXkCaNI75', {
+      from_name: this.name,
+      from_email: this.email,
+      message: this.message,
+
+    
+    }, console.log("user email ",this.email))
+    .then((result) => {
+      console.log('Email sent successfully!', result.text,result.from_email);
+      this.name = '';
+      this.email = '';
+      this.message = '';
+    });
+  } catch (error) {
+    console.error('Email sending failed:', error);
+    alert('Email sending failed. Please try again later.');
+  }
+}
+  
 
 
       },
