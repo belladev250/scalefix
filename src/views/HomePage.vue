@@ -205,7 +205,7 @@
                       </transition>
                     </div>
                     
-                    <div class="flex flex-col md:flex-row justify-between w-4/5 space-y-4 md:space-y-0">
+                    <div class="flex flex-col md:flex-row justify-between w-4/5 space-y-4 md:space-y-0 ">
                       <transition name="fade-slide-left" v-if="isVisible3" appear>
                         <p class="text-white font-ataero text-3xl md:text-4xl text-center md:text-left">
                           What is in for <span class="text-violet">you?</span>
@@ -230,17 +230,13 @@
                     </div>
                   
                     <div 
-                      class="flex flex-col md:flex-row items-center justify-center w-[80%] md:space-x-8 space-y-8 md:space-y-0" 
+                      class="flex flex-col md:flex-row items-center justify-center w-[80%] md:space-x-8 space-y-8 md:space-y-0 mt-32 " 
                       v-for="(slide, index) in currentSlideImages" 
                       :key="index"
                     >
-                      <div 
-                        v-for="card in slide" 
-                        :key="card.img" 
-                        class="space-y-4"  
-                      >
+                      <div  v-for="card in slide" :key="card.img"   class="space-y-4">
 
-                        <div class="w-auto h-[50vh] md:h-[50vh] overflow-hidden">
+                        <div class="w-auto h-[50vh] md:h-[50vh] overflow-hidden mt-10">
                           <transition name="zoom" v-if="isVisible3" appear>
                             <img 
                               :src="card.img" 
