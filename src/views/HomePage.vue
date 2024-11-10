@@ -507,7 +507,7 @@
                       
                       
                       <p class="text-gray-300 md:text-white">
-                        @ScaleFix.io All Rights Reserved 2024.
+                        &copy; ScaleFix.io All Rights Reserved 2024.
                       </p>
                     </div>
                   </div>
