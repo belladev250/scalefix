@@ -8,7 +8,7 @@
         class="absolute inset-0"
       />
 
-      <div class="relative h-screen min-h-[400px] max-h-[670px] sm:max-h-[800px] lg:max-h-[900px] xl:max-h-[1000px] overflow-hidden">
+      <div class="relative h-screen min-h-[400px] max-h-[670px] sm:max-h-[800px] lg:max-h-[900px] xl:max-h-[1000px] overflow-hidden cursor-pointer" id="home-section" >
         <NavbarComp />
         <div class="absolute inset-0 z-0">
           <img src="../assets/background.jpg" alt="Background" class="h-full w-full object-cover">

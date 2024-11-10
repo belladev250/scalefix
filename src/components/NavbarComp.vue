@@ -5,7 +5,7 @@
         <!-- Desktop Navbar -->
         <div class="hidden md:flex justify-between items-center p-8 px-8">
           <div class="ml-12 mt-2">
-            <img src="../assets/scalefixLogo.svg" class="h-[5vh]" alt="Scalefix Logo">
+            <img src="../assets/scalefixLogo.svg" class="h-[5vh]" alt="Scalefix Logo"  @click="scrollToSection('home-section')">
           </div>
           
           <ul class="flex space-x-10 mt-4">
