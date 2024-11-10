@@ -33,7 +33,7 @@
         <div class="overflow-x-hidden md:hidden">
           <div class="flex justify-between items-center p-4">
             <div class="ml-4">
-              <img src="../assets/scalefixLogo.svg" class="h-[3vh]" alt="Scalefix Logo">
+              <img src="../assets/scalefixLogo.svg" class="h-[3vh]" alt="Scalefix Logo" @click="scrollToSection('home-section')">
             </div>
             
             <!-- Hamburger Button -->
@@ -108,8 +108,8 @@ export default{
             navItems:[
                 {label:'About',id:'about-section'},
                 {label:'Services',id:'services-section'},
-                {label:'Testimonies',id:'testimonies-section'},
-                {label:'Contacts',id:'contacts-section'},
+                {label:'Testimonials',id:'testimonies-section'},
+                {label:'Ask a question',id:'contacts-section'},
             ],
             isMobileMenuOpen: false,
 

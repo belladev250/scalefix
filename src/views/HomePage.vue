@@ -56,60 +56,46 @@
             <div class="bg-frame h-auto  relative z-20 " id="about-section" >
               <!-- ABOUT US SECTION -->
             <div ref="observerElement"  >
-              <div class="flex items-center justify-center w-full p-4 md:p-24 space-x-4">
-
-                <div class=" space-y-0 md:space-y-4 mt-10 md:mt-0">
-                <div class="space-y-6 w-full md:w-[85vh] h-[60vh]"> 
-                  <transition name="slide-up" v-if="isVisible" appear>
-                  <p class="text-white font-helvetica text-md ">ABOUT SCALEFIX</p>
-                </transition>
-                  <div class="flex text-3xl md:text-4xl  text-white font-ataero ">
-                    <transition name="slide-up"  v-if="isVisible" appear>
-                  <p>Your trusted <span class="text-violet"> partner</span> for digital <span class="text-violet">marketing .</span></p>
-                </transition>
-                </div>
-                <transition name="fade-slide-up" v-if="isVisible" appear>
-                  <p class="text-white font-helvetica md:text-xl 2xl:text-2xl">
-                    We are a dynamic digital marketing agency dedicated to helping businesses grow and thrive in the digital landscape.
-                    With a team of experts in SEO, social media, content marketing, and online advertising,
-                    we craft customized strategies to increase visibility, engagement, and conversions.
-                  </p>
-                </transition>
-
-                  <div class="">
+              <div class="flex flex-col md:flex-row items-center justify-center w-full p-4 space-y-12 md:space-y-0 md:space-x-10 md:p-24">
+                <!-- Text Content Section -->
+                <div class="mt-4 md:mt-0 space-y-4 md:w-[50%]">
+                  <div class="space-y-4">
                     <transition name="slide-up" v-if="isVisible" appear>
-
-                    <a  href="https://calendly.com/bayinganaalain"  target="_blank" >
-                      <button class="bg-violet text-white text-md rounded-sm font-helvetica h-[6vh] px-4 py-2">Book a consultation call </button>
-                  </a>
-                  </transition>
-
+                      <p class="text-white font-helvetica text-md">ABOUT SCALEFIX</p>
+                    </transition>
+                    
+                    <div class="text-3xl md:text-4xl text-white font-ataero">
+                      <transition name="slide-up" v-if="isVisible" appear>
+                        <p>Your trusted <span class="text-violet">partner</span> for digital <span class="text-violet">marketing.</span></p>
+                      </transition>
+                    </div>
+                    
+                    <transition name="fade-slide-up" v-if="isVisible" appear>
+                      <p class="text-white font-helvetica text-md md:text-xl 2xl:text-2xl">
+                        We are a dynamic digital marketing agency dedicated to helping businesses grow and thrive in the digital landscape. 
+                        With a team of experts in SEO, social media, content marketing, and online advertising, we craft customized 
+                        strategies to increase visibility, engagement, and conversions.
+                      </p>
+                    </transition>
+              
+                    <transition name="slide-up" v-if="isVisible" appear>
+                      <a href="https://calendly.com/bayinganaalain" target="_blank">
+                        <button class="bg-violet text-white text-md rounded-sm font-helvetica h-[6vh] px-4 py-2 mt-10">
+                          Book a consultation call
+                        </button>
+                      </a>
+                    </transition>
                   </div>
                 </div>
-                <div class="">
-                  <transition name="fade-slide-left" v-if="isVisible" appear >
-                  <img src="../assets/hi5.jpg" class="h-[60vh] object-cover">
-                </transition>
-                </div>
-              </div>
-
               
-
-              <div class="hidden space-y-0 md:block space-y-6">
-                <div class="">
-                  <transition name="fade-slide-right" v-if="isVisible" appear >
-                  <img src="../assets/woman.jpg" class="h-[60vh] object-cover">
-                  </transition>
-                </div>
-                <div class="">
-                  <transition name="fade-slide-right" v-if="isVisible" appear >
-                  <img src="../assets/pc.jpg" class="h-[60vh] object-cover">
+                <!-- Image Section -->
+                <div class="mt-6 md:mt-0 md:w-[50%]">
+                  <transition name="fade-slide-right" v-if="isVisible" appear>
+                    <img src="../assets/pc.jpg" class="w-full h-[50vh] md:h-[60vh] object-cover">
                   </transition>
                 </div>
               </div>
-
-
-              </div>
+              
             </div>
 
             <div ref="observerElement1">
@@ -136,35 +122,44 @@
               
               </div>
         
-            
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full p-6 md:p-24">
-                  <div class="border -2 border-white p-4 h-auto md:h-[42vh] space-y-4 md:space-y-20" v-for="(value, index) in values" :key="index">
-                    <div>
-                      <transition name="zoom" v-if="isVisible1" appear>
-                      <img :src="value.image"  class="h-auto md:h-[8vh]"  >
-                      </transition>
-                    </div>
-                    <div class=" space-y-2 hidden md:block  ">
-                      <transition name="fade-slide-up" v-if="isVisible1" appear>
-                      <p class="text-violet font-ataero text-lg md:text-2xl font-bold">{{ value.id }}</p>
-                      </transition>
-
-                      <transition name="fade-slide-right" v-if="isVisible1" appear>
-                      <p class="text-white font-ataero text-lg md:text-2xl">{{ value.title1 }}</p>
-                      </transition>
-
-                      <transition name="fade-slide-right" v-if="isVisible1" appear>
-                      <p class="text-white font-ataero text-lg md:text-2xl">{{ value.title2 }}</p>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full p-6 md:p-24">
+                <div 
+                class="border -2 cursor-pointer border-gray-200 p-4 h-auto md:h-auto space-y-4 md:space-y-10 hover:bg-white/10 hover:border-violet-500 hover:shadow-lg hover:backdrop-blur-lg transition-all duration-300"
+                v-for="(value, index) in values"
+                :key="index"
+              >
+                  <!-- Image Section -->
+                  <div>
+                    <transition name="zoom" v-if="isVisible1" appear>
+                      <img :src="value.image" class="h-auto md:h-[8vh] ">
                     </transition>
-                    </div>
-
-                    <div class="space-y-2 block md:hidden">
+                  </div>
+              
+                  <!-- Content for Larger Screens -->
+                  <div class="space-y-2 hidden md:block">
+                    <transition name="fade-slide-up" v-if="isVisible1" appear>
                       <p class="text-violet font-ataero text-lg md:text-xl font-bold">{{ value.id }}</p>
-                      <p class="text-white font-ataero text-lg md:text-xl">{{ value.title1 }} {{ value.title2 }}</p>
-                    </div>
-
+                    </transition>
+              
+                    <div class=" flex space-x-2">
+                    <transition name="fade-slide-right" v-if="isVisible1" appear>
+                      <p class="text-white font-ataero text-lg md:text-xl">{{ value.title1 }}</p>
+                    </transition>
+              
+                    <transition name="fade-slide-right" v-if="isVisible1" appear>
+                      <p class="text-white font-ataero text-lg md:text-xl">{{ value.title2 }}</p>
+                    </transition>
+                  </div>
+                  </div>
+              
+                  <!-- Content for Mobile Screens -->
+                  <div class="space-y-2 block md:hidden">
+                    <p class="text-violet font-ataero text-lg md:text-xl font-bold">{{ value.id }}</p>
+                    <p class="text-white font-ataero text-lg md:text-xl">{{ value.title1 }} {{ value.title2 }}</p>
                   </div>
                 </div>
+              </div>
+              
               </div>
 
             </div>
@@ -200,79 +195,78 @@
              
 
                 <!-- Our service section -->
-                 <div ref="observerElement3"> 
-                <div class="flex flex-col items-center justify-center space-y-4 mt-20" id="services-section">
-                  <div class="w-4/5 md:w-4/5">
-                    <transition name="fade-slide-up" v-if="isVisible3" appear >
-                    <p class="text-white self-start text-lg font-helvetica Regural">
-                      Our services
-                    </p>
-                  </transition>
-                  </div>
-                  
-                  <div class="flex flex-col md:flex-row justify-between w-4/5 space-y-4 md:space-y-0">
-                    <transition name="fade-slide-left" v-if="isVisible3" appear >
-
-                    <p class="text-white font-ataero text-3xl md:text-4xl text-center md:text-left">
-                      What is in for <span class="text-violet">you?</span>
-                    </p>
-                    </transition>
-                    
-                    <div class="flex space-x-4 justify-center md:justify-end">
-                      <!-- Previous Button -->
-                      <button 
-                        class="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 ring-gray-400 ring-2 text-gray-100 rounded-full hover:bg-gray-500 transition duration-200" 
-                        @click="nextSlide"
-                      >
-                        <ArrowNarrowLeftIcon class="h-5 w-5 md:h-6 md:w-6" />
-                      </button>
-                      
-                      <!-- Next Button -->
-                      <button 
-                        class="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 ring-2 ring-gray-400 text-gray-100 rounded-full hover:bg-gray-500 transition duration-200" 
-                        @click="prevSlide"
-                      >
-                        <ArrowNarrowRightIcon class="h-5 w-5 md:h-6 md:w-6" />
-                      </button>
-                    </div>
-                  </div>
-              
-                  <div 
-                    class="flex flex-col md:flex-row items-center justify-center w-4/5 md:space-x-8 space-y-8 md:space-y-0" 
-                    v-for="(slide, index) in currentSlideImages" 
-                    :key="index"
-                  >
-                    <div 
-                      v-for="card in slide" 
-                      :key="card.img" 
-                      class="space-y-4 mt-12 w-full md:w-auto"  
-                    >
-                      <div class="h-[30vh] md:h-[50vh] w-full md:w-[50vh] overflow-hidden">
-                    <transition name="zoom" v-if="isVisible3" appear >
-                        <img 
-                          :src="card.img" 
-                          class="h-full w-full object-cover aspect-square"
-                        >
+                <div ref="observerElement3"> 
+                  <div class="flex flex-col items-center justify-center space-y-4 mt-20" id="services-section">
+                    <div class="w-4/5 md:w-4/5">
+                      <transition name="fade-slide-up" v-if="isVisible3" appear>
+                        <p class="text-white self-start text-lg font-helvetica Regural">
+                          Our services
+                        </p>
                       </transition>
+                    </div>
+                    
+                    <div class="flex flex-col md:flex-row justify-between w-4/5 space-y-4 md:space-y-0">
+                      <transition name="fade-slide-left" v-if="isVisible3" appear>
+                        <p class="text-white font-ataero text-3xl md:text-4xl text-center md:text-left">
+                          What is in for <span class="text-violet">you?</span>
+                        </p>
+                      </transition>
+                      
+                      <div class="flex space-x-4 justify-center md:justify-end">
+                        <button 
+                          class="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 ring-gray-400 ring-2 text-gray-100 rounded-full hover:bg-gray-500 transition duration-200" 
+                          @click="nextSlide"
+                        >
+                          <ArrowNarrowLeftIcon class="h-5 w-5 md:h-6 md:w-6" />
+                        </button>
+                        
+                        <button 
+                          class="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 ring-2 ring-gray-400 text-gray-100 rounded-full hover:bg-gray-500 transition duration-200" 
+                          @click="prevSlide"
+                        >
+                          <ArrowNarrowRightIcon class="h-5 w-5 md:h-6 md:w-6" />
+                        </button>
                       </div>
-                      <transition  name="slide-up" v-if="isVisible3" appear >
-                      <p 
-                        class="text-white font-ataero text-lg md:text-xl text-center md:text-left" 
-                        v-html="card.title"
-                      ></p>
-                    </transition>
-                    <transition name="fade-slide-left" v-if="isVisible3" appear >
-                      <p 
-                        class="text-white font-helvetica text-sm md:text-md text-center md:text-left" 
+                    </div>
+                  
+                    <div 
+                      class="flex flex-col md:flex-row items-center justify-center w-[80%] md:space-x-8 space-y-8 md:space-y-0" 
+                      v-for="(slide, index) in currentSlideImages" 
+                      :key="index"
+                    >
+                      <div 
+                        v-for="card in slide" 
+                        :key="card.img" 
+                        class="space-y-4"  
                       >
-                        {{ card.desc }}
-                      </p>
-                    </transition>
+
+                        <div class="w-auto h-[50vh] md:h-[50vh] overflow-hidden">
+                          <transition name="zoom" v-if="isVisible3" appear>
+                            <img 
+                              :src="card.img" 
+                              class="w-full h-full object-cover"
+                            />
+                          </transition>
+                        </div>
+                
+                        <!-- Title and Description -->
+                        <transition name="slide-up" v-if="isVisible3" appear>
+                          <p 
+                            class="text-white font-ataero text-lg md:text-xl text-center md:text-left" 
+                            v-html="card.title"
+                          ></p>
+                        </transition>
+                
+                        <transition name="fade-slide-left" v-if="isVisible3" appear>
+                          <p class="text-white font-helvetica text-md md:text-md text-center md:text-left">
+                            {{ card.desc }}
+                          </p>
+                        </transition>
+                      </div>
                     </div>
                   </div>
                 </div>
-
-              </div>
+                
             
 
                 <!-- testimonials -->
@@ -438,46 +432,57 @@
                     <div class="w-full mx-auto">
                       <form class="space-y-6 md:space-y-10" @submit.prevent="sendEmail">
                         <!-- Name and Email Fields -->
-                        <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-10">
+                        <div class="flex flex-col md:flex-row md:space-x-10 space-y-6 md:space-y-0">
                           <!-- Name Field -->
                           <div class="flex-1">
                             <label class="block text-gray-400 text-sm md:text-md font-medium mb-1">
-                              Name
+                              Company Name
                             </label>
                             <input
                               type="text"
                               class="w-full border-b border-gray-500 bg-transparent text-white 
                                     focus:outline-none focus:border-violet py-2"
-                              placeholder=" " v-model="name"  name="from_name"
+                              placeholder=" " v-model="name" name="from_name" 
                             />
                           </div>
-              
+                      
                           <!-- Email Field -->
                           <div class="flex-1">
-                            <label class="block text-gray-400 text-sm md:text-lg font-medium mb-1">
+                            <label class="block text-gray-400 text-sm md:text-md font-medium mb-1">
                               Email address
                             </label>
                             <input
                               type="email"
                               class="w-full border-b border-gray-500 bg-transparent text-white 
                                     focus:outline-none focus:border-violet py-2"
-                              placeholder=" " v-model="email" name="from_email"
+                              placeholder=" " v-model="email" name="from_email" required
                             />
                           </div>
                         </div>
-              
+                      
                         <!-- Message Field -->
                         <div>
-                          <label class="block text-gray-400 text-sm md:text-lg font-medium mb-1">
+                          <label class="block text-gray-400 text-sm md:text-md font-medium mb-1">
                             Message
                           </label>
                           <textarea
                             class="w-full border-b border-gray-500 bg-transparent text-white 
-                                  focus:outline-none focus:border-violet h-20 md:h-24"
-                            placeholder=" " v-model="message"  name="message"
+                                  focus:outline-none focus:border-violet h-20 md:h-24" required
+                            placeholder=" " v-model="message" name="message"
                           ></textarea>
                         </div>
-              
+
+                        <div class="flex items-center space-x-2">
+                          <input 
+                            type="checkbox" 
+                            v-model="isAgreed" 
+                            class="form-checkbox text-violet border-gray-500 focus:ring-2 focus:ring-violet" 
+                          />
+                          <label class="text-white text-md md:text-lg font-helvetica">
+                            I agree to recieve communications from scalefix.
+                          </label>
+                        </div>
+                      
                         <!-- Send Button -->
                         <div class="text-center mt-8">
                           <button
@@ -490,6 +495,7 @@
                           </button>
                         </div>
                       </form>
+                      
                     </div>
                   </div>
                 </div>
@@ -505,7 +511,7 @@
                       
                       
                       <p class="text-gray-300 md:text-white">
-                        Copyright @2024 ScaleFix.io All rights reserved
+                        @ScaleFix.io All Rights Reserved 2024.
                       </p>
                     </div>
                   </div>
@@ -553,7 +559,7 @@
             testimonials: [
             {
               text: "Working with ScaleFix has been a game-changer for our business. Their team truly understood our vision and crafted a marketing strategy that not only elevated our brand but also delivered real results.",
-              name: "Shema Ken",
+              name: "Micheal Harley",
               title: "Retail Business Owner",
               image: "https://randomuser.me/api/portraits/men/1.jpg"
             },
@@ -566,15 +572,15 @@
             },
             {
               text: "Working with ScaleFix has been transformative for our business. Their team understood our vision and created a marketing strategy that not only boosted our brand but also achieved impactful results.",
-              name: "John Doe",
-              title: "Retail Business Owner",
-              image: "https://randomuser.me/api/portraits/men/1.jpg"
+              name: "Paul Rabano",
+              title: "Affiliate Marketing Entrepreneur",
+              image: "https://randomuser.me/api/portraits/men/2.jpg"
             },
             {
               text: "ScaleFix's creativity and attention to detail were outstanding. Their strategies quickly boosted our online presence, driving significant increases in traffic and sales!",
-              name: "Jane Williams",
-              title: "E-commerce Entrepreneur",
-              image: "https://randomuser.me/api/portraits/women/1.jpg"
+              name: "Jane Will",
+              title: "Dropshipping Entrepreneur",
+              image: "https://randomuser.me/api/portraits/women/3.jpg"
             },
         
             // Add more testimonials as needed
@@ -583,12 +589,12 @@
             cards:[
 
             {
-              img:require('../assets/graph.jpg'),
+              img:require('../assets/graph.jpeg'),
               title:'Advanced Performance <br> Marketing',
               desc:'With our deep expertise in paid media, PPC, SEO, and multi-location marketing, we provide a competitive edge that sets us apart and help your brand stand out.'
             },
             {
-              img:require('../assets/ai.jpg'),
+              img:require('../assets/ai.jpeg'),
               title:'Tailored AI-Powered <br> Solutions',
               desc:'We understand that one-size-fits-all approach does not  work. Our AI-powered approach creates personalized solutions that address your specific challenges and drive results.'
             },
@@ -598,20 +604,20 @@
               desc:'We always put our clients needs first, carefully listening to their goals and challenges to create strategies that work for them. We build long-term partnerships'
             },
             {
-              img:require('../assets/3.jpg'),
+              img:require('../assets/3.jpeg'),
               title:'Delivering Measurable <br>  Results ',
               desc:'Your success is our success. We are deeply committed to delivering results by using a data-driven approach that ensures every strategy is effective.'
               
             },
             {
             
-              img:require('../assets/2.jpg'),
+              img:require('../assets/2.jpeg'),
               title:'Collaboration and <br> Partnership',
               desc:'We are more than just a service provider; we are your strategic partner. Your input is invaluable, and we are committed to a collaborative approach that delivers customized solutions.'
 
             },
             {
-              img:require('../assets/1.jpg'),
+              img:require('../assets/1.jpeg'),
               title:'Long-Term Commitment and  <br> Support',
               desc:'Our partnership does not  end with a campaign. We are committed to your long-term success and provide ongoing support, maintenance, and performance tracking to ensure your business continues to grow and evolve.'
             }
