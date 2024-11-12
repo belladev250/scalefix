@@ -372,7 +372,7 @@
                       >
                       
                       <div 
-                        class="absolute top-12 md:top-8 md:top-32 left-4 md:left-20 space-y-4 flex flex-col  text-white p-6 md:p-12 w-[90%] md:w-[60%] bg-frame"
+                        class="absolute top-24 md:top-8 md:top-36 left-4 md:left-20 space-y-4 flex flex-col  text-white p-6 md:p-12 w-[90%] md:w-[60%] bg-frame"
                       >
                       <transition name="slide-up" v-if="isVisible6" appear >
                         <p class="text-2xl md:text-5xl font-ataero leading-tight">
@@ -442,13 +442,13 @@
                           <!-- Name Field -->
                           <div class="flex-1">
                             <label class="block text-gray-400 text-sm md:text-md font-medium mb-1">
-                              Company Name
+                               Name
                             </label>
                             <input
                               type="text"
                               class="w-full border-b border-gray-500 bg-transparent text-white 
                                     focus:outline-none focus:border-violet py-2"
-                              placeholder=" " v-model="name" name="from_name" 
+                              placeholder=" " v-model="name" name="from_name" required
                             />
                           </div>
                       
@@ -462,6 +462,34 @@
                               class="w-full border-b border-gray-500 bg-transparent text-white 
                                     focus:outline-none focus:border-violet py-2"
                               placeholder=" " v-model="email" name="from_email" required
+                            />
+                          </div>
+                        </div>
+
+                        <div class="flex flex-col md:flex-row md:space-x-10 space-y-6 md:space-y-0">
+                          <!-- Name Field -->
+                          <div class="flex-1">
+                            <label class="block text-gray-400 text-sm md:text-md font-medium mb-1">
+                              Company Name
+                            </label>
+                            <input
+                              type="text"
+                              class="w-full border-b border-gray-500 bg-transparent text-white 
+                                    focus:outline-none focus:border-violet py-2"
+                              placeholder=" " v-model="company" name="company_name" required
+                            />
+                          </div>
+                      
+                          <!-- Email Field -->
+                          <div class="flex-1">
+                            <label class="block text-gray-400 text-sm md:text-md font-medium mb-1">
+                              Phone Number 
+                            </label>
+                            <input
+                              type="number"
+                              class="w-full border-b border-gray-500 bg-transparent text-white 
+                                    focus:outline-none focus:border-violet py-2"
+                              placeholder=" " v-model="number" name="from_number" required
                             />
                           </div>
                         </div>
@@ -562,6 +590,8 @@
             name:'',
             email:'',
             message:'',
+            company:'',
+            number:'',
             testimonials: [
             {
               text: "Working with ScaleFix has been a game-changer for our business. Their team truly understood our vision and crafted a marketing strategy that not only elevated our brand but also delivered real results.",
@@ -918,6 +948,8 @@
     emailjs.sendForm('service_loh6ei9', 'template_ohk17hg', e.target, 'l0zn_DcwDXkCaNI75', {
       from_name: this.name,
       from_email: this.email,
+      company_name:this.company,
+      from_number:this.number,
       message: this.message,
 
     
@@ -927,6 +959,8 @@
       this.name = '';
       this.email = '';
       this.message = '';
+      this.company = '';
+      this.number='';
     });
   } catch (error) {
     console.error('Email sending failed:', error);
