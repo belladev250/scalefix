@@ -14,7 +14,7 @@
           <img src="../assets/background.jpg" alt="Background" class="h-full w-full object-cover">
         </div>
 
-        <div class="absolute text-white top-44 xl:top-1/3 ml-4 sm:ml-8 lg:ml-16 space-y-2 z-10">
+        <div class="absolute text-white top-44 xl:top-1/3 ml-4 sm:ml-8 lg:ml-16 space-y-2 z-10 ">
           <transition name="slide-up" appear  >
           <p class="font-helvetica font-bold text-md sm:text-lg md:text-xl">WELCOME TO SCALEFIX,</p>
         </transition>
@@ -39,12 +39,12 @@
 
             
             </div>
-            <div class="flex flex-wrap space-x-2 sm:space-x-4 mt-6 sm:mt-12">
+            <div class="flex flex-wrap space-x-2 sm:space-x-4 mt-6 sm:mt-12 ">
               <transition name="fade-slide-right" appear >
-              <p class="text-white font-ataero text-5xl sm:text-6xl lg:text-8xl">Real</p>
+              <p class="text-white font-ataero text-5xl sm:text-6xl lg:text-8xl hidden md:block">Real</p>
             </transition>
             <transition name="fade-slide-right" appear >
-              <p class="text-violet font-ataero text-5xl sm:text-6xl lg:text-8xl">Impact</p>
+              <p class="text-violet font-ataero text-5xl sm:text-6xl lg:text-8xl hidden md:block ">Impact</p>
             </transition>
           
             </div>
