@@ -372,7 +372,7 @@
                       >
                       
                       <div 
-                        class="absolute top-24 md:top-8 md:top-36 left-4 md:left-20 space-y-4 flex flex-col  text-white p-6 md:p-12 w-[90%] md:w-[60%] bg-frame"
+                        class="absolute top-24 md:top-36 md:top-36 left-4 md:left-20 space-y-4 flex flex-col  text-white p-6 md:p-12 w-[90%] md:w-[60%] bg-frame"
                       >
                       <transition name="slide-up" v-if="isVisible6" appear >
                         <p class="text-2xl md:text-5xl font-ataero leading-tight">
