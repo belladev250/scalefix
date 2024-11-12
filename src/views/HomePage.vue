@@ -50,7 +50,7 @@
             </div>
             <transition name="slide-up"  appear>
               <a href="https://calendly.com/bayinganaalain" target="_blank">
-                <button class="bg-violet text-white text-md rounded-sm font-helvetica h-[6vh] px-8 py-2 mt-8 mb-8 block md:hidden">
+                <button class="bg-violet text-white text-md rounded-sm font-helvetica h-[6vh] px-8 py-2 -ml-4 mt-8 mb-8 block md:hidden">
                   Book a consultation call
                 </button>
               </a>
