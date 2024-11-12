@@ -8,13 +8,13 @@
         class="absolute inset-0"
       />
 
-      <div class="relative h-screen min-h-[400px] max-h-[670px] sm:max-h-[800px] lg:max-h-[900px] xl:max-h-[1000px] overflow-hidden cursor-pointer" id="home-section" >
+      <div class="relative h-screen min-h-[400px] max-h-[670px] sm:max-h-[400px] lg:max-h-[900px] xl:max-h-[1000px] overflow-hidden cursor-pointer" id="home-section" >
         <NavbarComp />
         <div class="absolute inset-0 z-0">
           <img src="../assets/background.jpg" alt="Background" class="h-full w-full object-cover">
         </div>
 
-        <div class="absolute text-white top-1/3 xl:top-1/3 ml-4 sm:ml-8 lg:ml-16 space-y-2 z-10">
+        <div class="absolute text-white top-44 xl:top-1/3 ml-4 sm:ml-8 lg:ml-16 space-y-2 z-10">
           <transition name="slide-up" appear  >
           <p class="font-helvetica font-bold text-md sm:text-lg md:text-xl">WELCOME TO SCALEFIX,</p>
         </transition>
@@ -36,6 +36,8 @@
                 to make sure your brand succeeds online.
               </p>
             </transition>
+
+            
             </div>
             <div class="flex flex-wrap space-x-2 sm:space-x-4 mt-6 sm:mt-12">
               <transition name="fade-slide-right" appear >
@@ -46,6 +48,13 @@
             </transition>
           
             </div>
+            <transition name="slide-up"  appear>
+              <a href="https://calendly.com/bayinganaalain" target="_blank">
+                <button class="bg-violet text-white text-md rounded-sm font-helvetica h-[6vh] px-8 py-2 mt-8 mb-8 block md:hidden">
+                  Book a consultation call
+                </button>
+              </a>
+            </transition>
           </div>
         </div>
       </div>
@@ -63,6 +72,7 @@
                     <transition name="slide-up" v-if="isVisible" appear>
                       <p class="text-white font-helvetica text-md">ABOUT SCALEFIX</p>
                     </transition>
+
                     
                     <div class="text-3xl md:text-4xl text-white font-ataero">
                       <transition name="slide-up" v-if="isVisible" appear>
@@ -80,7 +90,7 @@
               
                     <transition name="slide-up" v-if="isVisible" appear>
                       <a href="https://calendly.com/bayinganaalain" target="_blank">
-                        <button class="bg-violet text-white text-md rounded-sm font-helvetica h-[6vh] px-4 py-2 mt-10">
+                        <button class="bg-violet text-white text-md rounded-sm font-helvetica h-[6vh] px-4 py-2 mt-10 hidden md:block">
                           Book a consultation call
                         </button>
                       </a>
@@ -103,7 +113,7 @@
                 <div class="space-y-2 mt-12 md:mt-0">
                     
                   <transition name="slide-up" v-if="isVisible1" appear>
-                  <p class="text-center text-white font-helvetica Regular text-xl ">Our values</p>
+                  <p class="text-center text-white font-helvetica Regular text-xl ">OUR VALUES</p>
                 </transition>
                     
                 <transition name="fade-slide-up" v-if="isVisible1" appear>
