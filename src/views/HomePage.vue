@@ -452,6 +452,27 @@
                             />
                           </div>
                       
+                           <!-- Email Field -->
+
+                           <div class="flex-1">
+                            <label class="block text-gray-400 text-sm md:text-md font-medium mb-1">
+                              Phone Number 
+                            </label>
+                            <input
+                              type="number"
+                              class="w-full border-b border-gray-500 bg-transparent text-white 
+                                    focus:outline-none focus:border-violet py-2"
+                              placeholder=" " v-model="number" name="from_number" required
+                            />
+                          </div>
+                         
+                         
+                        </div>
+
+                        <div class="flex flex-col md:flex-row md:space-x-10 space-y-6 md:space-y-0">
+                          
+                        
+                      
                           <!-- Email Field -->
                           <div class="flex-1">
                             <label class="block text-gray-400 text-sm md:text-md font-medium mb-1">
@@ -464,34 +485,21 @@
                               placeholder=" " v-model="email" name="from_email" required
                             />
                           </div>
-                        </div>
 
-                        <div class="flex flex-col md:flex-row md:space-x-10 space-y-6 md:space-y-0">
-                          <!-- Name Field -->
-                          <div class="flex-1">
-                            <label class="block text-gray-400 text-sm md:text-md font-medium mb-1">
-                              Company Name
-                            </label>
-                            <input
-                              type="text"
-                              class="w-full border-b border-gray-500 bg-transparent text-white 
-                                    focus:outline-none focus:border-violet py-2"
-                              placeholder=" " v-model="company" name="company_name" required
-                            />
-                          </div>
-                      
-                          <!-- Email Field -->
-                          <div class="flex-1">
-                            <label class="block text-gray-400 text-sm md:text-md font-medium mb-1">
-                              Phone Number 
-                            </label>
-                            <input
-                              type="number"
-                              class="w-full border-b border-gray-500 bg-transparent text-white 
-                                    focus:outline-none focus:border-violet py-2"
-                              placeholder=" " v-model="number" name="from_number" required
-                            />
-                          </div>
+                            <!-- Name Field -->
+                            <div class="flex-1">
+                              <label class="block text-gray-400 text-sm md:text-md font-medium mb-1">
+                                Company Name
+                              </label>
+                              <input
+                                type="text"
+                                class="w-full border-b border-gray-500 bg-transparent text-white 
+                                      focus:outline-none focus:border-violet py-2"
+                                placeholder=" " v-model="company" name="company_name" required
+                              />
+                            </div>
+
+                       
                         </div>
                       
                         <!-- Message Field -->
@@ -510,9 +518,9 @@
                           <input 
                             type="checkbox" 
                             v-model="isAgreed" 
-                            class="form-checkbox text-violet border-gray-500 focus:ring-2 focus:ring-violet" 
+                            class="form-checkbox text-violet border-gray-500 focus:ring-2 focus:ring-violet" required
                           />
-                          <label class="text-white text-md md:text-lg font-helvetica">
+                          <label class="text-white text-md md:text-lg font-helvetica" >
                             I agree to recieve communications from scalefix.
                           </label>
                         </div>
@@ -666,7 +674,8 @@
                 id:'1.',
                 image:require('../assets/person.svg'),
                 title1:"Prioritizing client's needs",
-                title2:"needs"
+                title2:"needs",
+              
               },
               {
                 id:'2.',
