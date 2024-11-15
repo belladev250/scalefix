@@ -954,7 +954,7 @@
   sendEmail(e) {
   try {
     
-    emailjs.sendForm('service_loh6ei9', 'template_ohk17hg', e.target, 'l0zn_DcwDXkCaNI75', {
+    emailjs.sendForm('service_ozjkfge', 'template_9cog2u8', e.target, '_DebUxWSXrCtmXCva', {
       from_name: this.name,
       from_email: this.email,
       company_name:this.company,
