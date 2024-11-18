@@ -159,13 +159,27 @@
                     <transition name="fade-slide-right" v-if="isVisible1" appear>
                       <p class="text-white font-ataero text-lg md:text-xl">{{ value.title2 }}</p>
                     </transition>
+                  
                   </div>
+                  <transition name="slide-up" v-if="isVisible1" appear >
+                  <hr class="w-auto border -2 border-gray-500  " >
+                </transition>
+                  <transition name="fade-slide-right" v-if="isVisible1" appear>
+                    <p class="text-gray-200 font-helvetica font-regular text-md md:text-md">{{ value.desc}}</p>
+                  </transition>
                   </div>
               
                   <!-- Content for Mobile Screens -->
                   <div class="space-y-2 block md:hidden">
                     <p class="text-violet font-ataero text-lg md:text-xl font-bold">{{ value.id }}</p>
                     <p class="text-white font-ataero text-lg md:text-xl">{{ value.title1 }} {{ value.title2 }}</p>
+                    <transition name="slide-up" v-if="isVisible1" appear >
+                      <hr class="w-auto border -2 border-gray-500  " >
+                    </transition>
+                      <transition name="fade-slide-right" v-if="isVisible1" appear>
+                        <p class="text-gray-200 font-helvetica font-regular text-md md:text-md">{{ value.desc}}</p>
+                      </transition>
+
                   </div>
                 </div>
               </div>
@@ -674,40 +688,46 @@
                 id:'1.',
                 image:require('../assets/person.svg'),
                 title1:"Prioritizing client's needs",
-                title2:"needs",
+                title2:"",
+                desc:'Focusing on understanding and addressing client needs to deliver tailored and impactful solutions.'
               
               },
               {
                 id:'2.',
                 image:require('../assets/rocket.svg'),
                 title1:"Building Strong",
-                title2:"relationships"
+                title2:"relationships",
+                desc:"Fostering meaningful connections through trust and collaboration."
               },
               {
                 id:'3.',
                 image:require('../assets/clock.svg'),
                 title1:"Delivering on",
-                title2:"promises"
+                title2:"promises",
+                desc:'Ensuring reliability and commitment by meeting expectations consistently.'
               },
 
               {
                 id:'4.',
                 image:require('../assets/bulb.svg'),
                 title1:"Embracing new ",
-                title2:"ideas"
+                title2:"ideas",
+                desc:'Welcoming innovation and creativity to drive progress and growth.'
               },
               {
                 id:'5.',
                 image:require('../assets/bi.svg'),
                 title1:"Intergrity and ",
-                title2:"transparency"
+                title2:"transparency",
+                desc:"Upholding honesty and openness in all actions and communications."
               },
 
               {
                 id:'6.',
                 image:require('../assets/smiley.svg'),
                 title1:"Striving for ",
-                title2:"perfection"
+                title2:"perfection",
+                desc:'Pursuing excellence with dedication and attention to detail.'
               },
             ],
             particlesOptions: {
