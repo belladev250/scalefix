@@ -162,7 +162,7 @@
                   
                   </div>
                   <transition name="slide-up" v-if="isVisible1" appear >
-                  <hr class="w-auto border -2 border-gray-500  " >
+                  <hr class="w-[45vh] border -2 border-gray-500  " >
                 </transition>
                   <transition name="fade-slide-right" v-if="isVisible1" appear>
                     <p class="text-gray-200 font-helvetica font-regular text-md md:text-md">{{ value.desc}}</p>
