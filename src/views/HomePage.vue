@@ -67,7 +67,7 @@
             <div ref="observerElement"  >
               <div class="flex flex-col md:flex-row items-center justify-center w-full p-4 space-y-12 md:space-y-0 md:space-x-10 md:p-24">
                 <!-- Text Content Section -->
-                <div class="mt-4 md:mt-0 space-y-4 md:w-[50%]">
+                <div class="mt-10 md:mt-0 space-y-4 md:w-[50%]">
                   <div class="space-y-4">
                     <transition name="slide-up" v-if="isVisible" appear>
                       <p class="text-white font-helvetica text-md">ABOUT SCALEFIX</p>
@@ -162,10 +162,10 @@
                   
                   </div>
                   <transition name="slide-up" v-if="isVisible1" appear >
-                  <hr class="w-[45vh] border -2 border-gray-500  " >
+                 
                 </transition>
                   <transition name="fade-slide-right" v-if="isVisible1" appear>
-                    <p class="text-gray-200 font-helvetica font-regular text-md md:text-md">{{ value.desc}}</p>
+                    <p class="text-gray-400 font-helvetica font-regular text-md md:text-md">{{ value.desc}}</p>
                   </transition>
                   </div>
               
@@ -174,10 +174,10 @@
                     <p class="text-violet font-ataero text-lg md:text-xl font-bold">{{ value.id }}</p>
                     <p class="text-white font-ataero text-lg md:text-xl">{{ value.title1 }} {{ value.title2 }}</p>
                     <transition name="slide-up" v-if="isVisible1" appear >
-                      <hr class="w-auto border -2 border-gray-500  " >
+                    
                     </transition>
                       <transition name="fade-slide-right" v-if="isVisible1" appear>
-                        <p class="text-gray-200 font-helvetica font-regular text-md md:text-md">{{ value.desc}}</p>
+                        <p class="text-gray-400 font-helvetica font-light text-md md:text-md">{{ value.desc}}</p>
                       </transition>
 
                   </div>
