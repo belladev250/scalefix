@@ -131,60 +131,45 @@
 
             <div ref="observerElement1">
                
-              
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full p-6 md:p-24">
-                <div 
-                class="border -2 cursor-pointer border-gray-200 p-4 h-auto md:h-auto space-y-4 md:space-y-10 hover:bg-white/10 hover:border-violet-500 hover:shadow-lg hover:backdrop-blur-lg transition-all duration-300"
-                v-for="(value, index) in values"
-                :key="index"
-              >
-                  <!-- Image Section -->
-                  <div>
-                    <transition name="zoom" v-if="isVisible1" appear>
-                      <img :src="value.image" class="h-auto md:h-[8vh] ">
-                    </transition>
-                  </div>
-              
-                  <!-- Content for Larger Screens -->
-                  <div class="space-y-2 hidden md:block">
-                    <transition name="fade-slide-up" v-if="isVisible1" appear>
-                      <p class="text-violet font-ataero text-lg md:text-xl font-bold">{{ value.id }}</p>
-                    </transition>
-              
-                    <div class=" flex space-x-2">
-                    <transition name="fade-slide-right" v-if="isVisible1" appear>
-                      <p class="text-white font-ataero text-lg md:text-xl">{{ value.title1 }}</p>
-                    </transition>
-              
-                    <transition name="fade-slide-right" v-if="isVisible1" appear>
-                      <p class="text-white font-ataero text-lg md:text-xl">{{ value.title2 }}</p>
-                    </transition>
+              <transition name="slide-up"  v-if="isVisible"  appear>
+                <p class=" text-white font-helvetica text-center  text-3xl mt-10 ">WHY  <span class="text-violet font-ataero">SCALEFIX ?</span></p>
+              </transition>
                   
-                  </div>
-                  <transition name="slide-up" v-if="isVisible1" appear >
-                 
-                </transition>
-                  <transition name="fade-slide-right" v-if="isVisible1" appear>
-                    <p class="text-gray-400 font-helvetica font-regular text-md md:text-md">{{ value.desc}}</p>
-                  </transition>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full p-4 md:p-16 mt-8 ">
+                <div 
+                  class="group border-2 border-violet p-4 md:p-6 h-auto md:h-[16rem] space-y-4 rounded-xl hover:shadow-[0_0_10px_2px_#634FED] cursor-pointer transition-all duration-300 w-[95%] md:w-[80%] mx-auto "
+                  v-for="(value, index) in values"
+                  :key="index"
+                >
+                  <!-- Image Section -->
+                  <div class="flex items-center justify-center mt-4 transition-all duration-300">
+                    <transition name="zoom" appear>
+                      <img 
+                        :src="value.image" 
+                        class="h-auto sm:h-[10vh] md:h-[14vh] group-hover:h-[7vh] transition-all duration-300"
+                      >
+                    </transition>
                   </div>
               
-                  <!-- Content for Mobile Screens -->
-                  <div class="space-y-2 block md:hidden">
-                    <p class="text-violet font-ataero text-lg md:text-xl font-bold">{{ value.id }}</p>
-                    <p class="text-white font-ataero text-lg md:text-xl">{{ value.title1 }} {{ value.title2 }}</p>
-                    <transition name="slide-up" v-if="isVisible1" appear >
-                    
-                    </transition>
-                      <transition name="fade-slide-right" v-if="isVisible1" appear>
-                        <p class="text-gray-400 font-helvetica font-light text-md md:text-md">{{ value.desc}}</p>
-                      </transition>
-
+                  <!-- Content Section -->
+                  <div class="space-y-2">
+                    <!-- Titles -->
+                    <div class="flex sm:block sm:space-x-0 space-x-2 justify-center items-center">
+                      <p class="text-white text-center font-ataero text-base sm:text-lg md:text-xl">{{ value.title1 }}</p>
+                      <p class="text-white text-center font-ataero text-base sm:text-lg md:text-xl">{{ value.title2 }}</p>
+                    </div>
+              
+                    <!-- Description -->
+                    <p 
+                      class="text-gray-400 font-helvetica text-center text-sm sm:text-md md:text-md opacity-0 group-hover:opacity-100 group-hover:translate-y-0 -translate-y-4 transition-all duration-300"
+                    >
+                      {{ value.desc }}
+                    </p>
                   </div>
                 </div>
               </div>
               
-              
+             
 
             </div>
 
@@ -687,9 +672,9 @@
               {
                 id:'1.',
                 image:require('../assets/person.svg'),
-                title1:"Prioritizing client's needs",
-                title2:"",
-                desc:'Focusing on understanding and addressing client needs to deliver tailored and impactful solutions.'
+                title1:"Prioritizing",
+                title2:" client's needs",
+                desc:'Focused on understanding needs to deliver impactful, tailored solutions.'
               
               },
               {
