@@ -68,7 +68,7 @@
             <div ref="observerElement"  >
               <div class="flex flex-col md:flex-row items-center justify-center w-full p-4  md:space-y-0 md:space-x-24 md:p-24">
                 <!-- Text Content Section -->
-                <div class="mt-10 md:mt-0 space-y-4 md:w-[50%] border -3 border-violet p-10 rounded-xl border hover:shadow-[0_0_10px_2px_#634FED] cursor-pointer">
+                <div class="mt-10 md:mt-0 space-y-4 md:w-[50%] border -2 border-violet p-8 rounded-xl border hover:shadow-[0_0_10px_2px_#634FED] cursor-pointer">
                   <div class="space-y-4">
                     <transition name="slide-up" v-if="isVisible" appear>
                       <p class="text-white font-helvetica text-md">ABOUT SCALEFIX</p>
@@ -82,7 +82,7 @@
                     </div>
                     
                     <transition name="fade-slide-up" v-if="isVisible" appear>
-                      <p class="text-white font-helvetica text-md md:text-xl 2xl:text-2xl">
+                      <p class="text-gray-400 font-helvetica font-light text-md md:text-md 2xl:text-2xl">
                         We are a dynamic digital marketing agency dedicated to helping businesses grow and thrive in the digital landscape. 
                         With a team of experts in SEO, social media, content marketing, and online advertising, we craft customized 
                         strategies to increase visibility, engagement, and conversions.
@@ -100,26 +100,27 @@
                 </div>
               
                 <!-- Image Section -->
-                <div class="mt-6 md:mt-0 md:w-[50%]">
-                  <div class="space-y-2  md:mt-0">
+                <div class="mt-6 md:mt-0 md:w-[50%] border -2 border-violet p-10 rounded-xl border hover:shadow-[0_0_10px_2px_#634FED] cursor-pointer">
+
+                  <div class="space-y-6  md:mt-8">
                     
-                    <transition name="slide-up"  appear>
+                    <transition name="slide-up"  v-if="isVisible"  appear>
                     <p class=" text-white font-helvetica Regular text-xl ">OUR VALUES</p>
                   </transition>
                       
-                  <transition name="fade-slide-up"  appear>
+                  <transition name="fade-slide-up"  v-if="isVisible" appear>
                     <p class="text-white font-ataero text-3xl" >Why are <span class="text-violet" >brands</span> choosing <span class="text-violet" >us?</span></p>
                   </transition>
             
-                  <transition name="fade-slide-up"  appear>
+                  <transition name="fade-slide-up"  v-if="isVisible" appear>
   
-                    <p class=" text-white font-helvetica text-xl">Guided by principles that drive success and build lasting relationships, we focus on innovation, honesty,</p>
+                    <p class=" text-gray-400 font-helvetica font-light text-md ">Guided by principles that drive success and build lasting relationships,
+                       we focus on innovation, honesty, collaboration, and excellence. We are driven by a commitment to delivering results that matter,
+                        fostering trust, and exceeding expectations in everything we do. Our approach combines creativity with strategy,
+                       ensuring that every solution we offer is tailored to meet unique needs and challenges.</p>
                   </transition>
-  
-                  <transition name="fade-slide-up"  appear>
-                  <p class="text-white font-helvetica text-xl"> and delivering results that matter.</p>
-                </transition>
-  
+
+
                 
                 </div>
 
@@ -131,7 +132,7 @@
             <div ref="observerElement1">
                
               
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full p-6 md:p-24">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full p-6 md:p-24">
                 <div 
                 class="border -2 cursor-pointer border-gray-200 p-4 h-auto md:h-auto space-y-4 md:space-y-10 hover:bg-white/10 hover:border-violet-500 hover:shadow-lg hover:backdrop-blur-lg transition-all duration-300"
                 v-for="(value, index) in values"
