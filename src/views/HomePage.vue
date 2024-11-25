@@ -137,7 +137,7 @@
                   
               <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full p-4 md:p-16 mt-8 ">
                 <div 
-                  class="group border-2 border-violet p-4 md:p-6 h-auto md:h-[16rem] space-y-4 rounded-xl hover:shadow-[0_0_10px_2px_#634FED] cursor-pointer transition-all duration-300 w-[95%] md:w-[80%] mx-auto "
+                  class="group border-2 border-violet p-4 md:p-6 h-auto md:h-[16rem] space-y-4 rounded-xl hover:shadow-[0_0_10px_2px_#634FED] cursor-pointer transition-all duration-300 w-[95%] md:w-[80%] mx-auto overflow-hidden "
                   v-for="(value, index) in values"
                   :key="index"
                 >
@@ -145,9 +145,12 @@
                   <div class="flex items-center justify-center mt-4 transition-all duration-300">
                     <transition name="zoom" appear>
                       <img 
-                        :src="value.image" 
-                        class="h-auto sm:h-[10vh] md:h-[14vh] group-hover:h-[7vh] transition-all duration-300"
+                       
+                      :src="value.image" 
+                      class="h-auto sm:h-[10vh] md:h-[14vh] lg:h-[12vh] xl:h-[10vh] 2xl:h-[8vh] max-h-[14vh] group-hover:h-[7vh] transition-all duration-300 object-contain mx-auto"
+                      alt="Icon"
                       >
+                    
                     </transition>
                   </div>
               
