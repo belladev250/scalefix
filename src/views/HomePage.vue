@@ -19,7 +19,8 @@
           <p class="font-helvetica font-bold text-md sm:text-lg md:text-xl">WELCOME TO SCALEFIX,</p>
         </transition>
           <div class="flex flex-wrap sm:space-x-2">
-            <transition name="fade-slide-up" appear  >
+
+            <transition name="fade-slide-up" appear>
 
             <p class="text-white font-ataero text-5xl sm:text-6xl lg:text-8xl">Creative</p>
           </transition>
@@ -29,7 +30,7 @@
           </div>
           <div class="flex flex-wrap w-full space-x-2 sm:space-x-10 mt-4 sm:mt-4 ">
             <div class="w-full sm:w-1/2">
-              <transition name="fade-slide-left" appear  >
+              <transition name="fade-slide-left" appear>
               <p class="font-helvetica text-sm sm:text-base lg:text-lg">
                 Empower your brand with custom digital marketing solutions that increase visibility,
                 build strong connections with customers, and help your business grow. We use creativity and smart strategies 
@@ -65,9 +66,9 @@
             <div class="bg-frame h-auto  relative z-20 " id="about-section" >
               <!-- ABOUT US SECTION -->
             <div ref="observerElement"  >
-              <div class="flex flex-col md:flex-row items-center justify-center w-full p-4 space-y-12 md:space-y-0 md:space-x-10 md:p-24">
+              <div class="flex flex-col md:flex-row items-center justify-center w-full p-4  md:space-y-0 md:space-x-24 md:p-24">
                 <!-- Text Content Section -->
-                <div class="mt-10 md:mt-0 space-y-4 md:w-[50%]">
+                <div class="mt-10 md:mt-0 space-y-4 md:w-[50%] border -3 border-violet p-10 rounded-xl border hover:shadow-[0_0_10px_2px_#634FED] cursor-pointer">
                   <div class="space-y-4">
                     <transition name="slide-up" v-if="isVisible" appear>
                       <p class="text-white font-helvetica text-md">ABOUT SCALEFIX</p>
@@ -100,38 +101,36 @@
               
                 <!-- Image Section -->
                 <div class="mt-6 md:mt-0 md:w-[50%]">
-                  <transition name="fade-slide-right" v-if="isVisible" appear>
-                    <img src="../assets/pc.jpg" class="w-full h-[50vh] md:h-[60vh] object-cover">
+                  <div class="space-y-2  md:mt-0">
+                    
+                    <transition name="slide-up"  appear>
+                    <p class=" text-white font-helvetica Regular text-xl ">OUR VALUES</p>
                   </transition>
+                      
+                  <transition name="fade-slide-up"  appear>
+                    <p class="text-white font-ataero text-3xl" >Why are <span class="text-violet" >brands</span> choosing <span class="text-violet" >us?</span></p>
+                  </transition>
+            
+                  <transition name="fade-slide-up"  appear>
+  
+                    <p class=" text-white font-helvetica text-xl">Guided by principles that drive success and build lasting relationships, we focus on innovation, honesty,</p>
+                  </transition>
+  
+                  <transition name="fade-slide-up"  appear>
+                  <p class="text-white font-helvetica text-xl"> and delivering results that matter.</p>
+                </transition>
+  
+                
+                </div>
+
                 </div>
               </div>
               
             </div>
 
             <div ref="observerElement1">
-                 <div class="space-y-10 md:space-y-0" >
-                <div class="space-y-2 mt-12 md:mt-0">
-                    
-                  <transition name="slide-up" v-if="isVisible1" appear>
-                  <p class="text-center text-white font-helvetica Regular text-xl ">OUR VALUES</p>
-                </transition>
-                    
-                <transition name="fade-slide-up" v-if="isVisible1" appear>
-                  <p class="text-center text-white font-ataero text-3xl" >Why are <span class="text-violet" >brands</span> choosing <span class="text-violet" >us?</span></p>
-                </transition>
-          
-                <transition name="fade-slide-up" v-if="isVisible1" appear>
-
-                  <p class="text-center text-white font-helvetica text-lg">Guided by principles that drive success and build lasting relationships, we focus on innovation, honesty,</p>
-                </transition>
-
-                <transition name="fade-slide-up" v-if="isVisible1" appear>
-                <p class="text-center text-white font-helvetica text-lg"> and delivering results that matter.</p>
-              </transition>
-
+               
               
-              </div>
-        
               <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full p-6 md:p-24">
                 <div 
                 class="border -2 cursor-pointer border-gray-200 p-4 h-auto md:h-auto space-y-4 md:space-y-10 hover:bg-white/10 hover:border-violet-500 hover:shadow-lg hover:backdrop-blur-lg transition-all duration-300"
@@ -184,7 +183,7 @@
                 </div>
               </div>
               
-              </div>
+              
 
             </div>
 
